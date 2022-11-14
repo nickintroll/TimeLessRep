@@ -1,0 +1,194 @@
+/* for the bit titles */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@500&display=swap');
+/* for all the website */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* for mid titles */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body{
+	font-family: 'Roboto', sans-serif;
+
+	overflow-x: hidden;
+	letter-spacing: 0.5px;
+}
+
+.content{
+	max-width: 1200px;
+	margin: 0 auto;
+
+	/* border: 1px solid green; */
+}
+
+.header{
+	border-bottom:3px solid lightblue;
+
+
+	margin: -100rem -100rem 0px -100rem;
+	padding: 100rem 100rem 5px 100rem;
+}
+
+.header > .content > div{
+	margin-top: 10px;
+	width: 49%;
+	display: inline-block;
+	vertical-align: top;
+	/* border: 1px solid gray; */
+}
+
+.header > .content > div > h3 {
+	vertical-align: top;
+	display: inline-block;
+	font-weight:bolder;
+	/* border: 1px solid blue; */
+	margin: 0;
+}
+
+.header > .content  > div > div{
+	width: fit-content;
+	margin: 0 auto;
+}
+
+.header__meta_dropdown > div{
+	vertical-align: top;
+	display: inline-block;
+
+	padding: 0px 15px 5px 15px;
+	border-top: 3px solid rgba(135, 206, 250, 0);
+	transition: 0.5s;
+
+}
+
+.header__meta_dropdown > div:hover{
+	color: darkblue;
+	cursor: pointer;
+	transition: 0.5s;
+	border-top: 3px solid lightskyblue	
+}
+
+.header__meta_dropdown > div > h3{
+	margin: 0; 
+}
+
+.header > .content  > div > div > h3{
+
+	/* border: 1px solid blue; */
+
+}
+
+
+h1{
+	font-family: 'Bebas Neue', cursive;
+	letter-spacing: 2px;
+	font-size: 42px;
+	color:rgb(2, 2, 49);
+	text-shadow: 0px 0px 30px rgb(192, 192, 192);
+}
+
+h2{
+	margin:0;
+	margin-bottom: 30px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 28px;
+}
+
+h3{
+	font-weight: 100;
+}
+a{
+	color: rgb(2, 2, 49);
+	text-decoration: none;
+}
+
+.content__title_back{
+	background-color: green;
+
+	margin: 0rem -100rem 0px -100rem;
+	padding: 30px 100rem 60px 100rem;
+	
+	color: white;
+	text-shadow: 0px 0px 25px black;
+}
+
+.centered{
+	width: fit-content;
+	margin: 0 auto;
+}
+
+.tricky-but > div{
+	display: inline-block;
+	padding: 10px 15px 10px 15px;
+	border-radius: 20px;
+
+	background-color: white;
+	color: black
+}
+
+.tricky-but > div + div{
+	background-color: lightgreen;
+}
+
+.drop_down{
+	display: none;
+	position: absolute;
+	background-color: white;
+	padding: 10px;
+	font-size: 18px;
+}
+.drop_down > h4 > a{
+	font-size: 18px;
+	display: block;
+	border: 1px solid red;
+	margin-top: 10px;
+	padding: 8px;
+	background-color: lightcyan;
+}
+
+.good_points > div{
+	/* border: 1px solid blue; */
+}
+.good_points > div > h2{
+	/* border: 1px solid green; */
+	border-bottom: 1px solid blue;
+
+	width: fit-content;
+	margin: 0 auto;
+
+	padding-bottom: 10px;
+	margin-top: 30px;
+
+}
+
+.grid-master{
+	display: grid;
+
+	justify-content: center;
+	grid-gap: 25px;
+	grid-template-columns: repeat(auto-fill,  minmax(200px, 250px));
+
+}
+
+.grid-master > div{
+}
+.grid-master > div > div > img{
+	width: 240px;
+}
+
+.grid-master > div > div > h2{
+	font-size: 20px;
+}
+svg{
+	background-color: rgb(148, 222, 247);
+	border-radius: 100px;
+}
+
+.afterbirth{
+	margin: 0rem -100rem -2rem -100rem;
+	padding: 0rem 100rem 2rem 100rem;
+
+	border-top: 3px solid lightblue;
+}
+
+.inline-bastards > div{
+	vertical-align: top;
+	display: inline-block;
+}

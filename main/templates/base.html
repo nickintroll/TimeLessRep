@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<title>
+		Proglobalwork
+	</title>
+</head>
+<body>
+	<div class="header">
+		<div class="content">
+			<div>
+				<h3>
+					Proglobalwork
+				</h3>
+			</div>
+			<div>
+				<div class="header__meta_dropdown">
+					<div class="drop_but">
+						<h3>
+							Cityzenships
+						</h3>
+						<div class="drop_down">
+							<h4>
+								<a href="">something</a> <br>
+							</h4>
+							<h4>
+								<a href="">something else</a>	
+							</h4>
+						</div>
+					</div>
+					<div class="drop_but"> 
+						<h3>
+							Working visas
+						</h3>
+						<div class="drop_down">
+							<a href="">something</a> <br>
+							<a href="">something else</a>
+						</div>
+					</div>
+					<div class="drop_but">
+						<h3>
+							Resident views
+						</h3>
+						<div class="drop_down">
+							<a href="">something</a> <br>
+							<a href="">something else</a>
+						</div>
+					</div>		
+				</div>
+			</div>
+	
+		</div>
+	</div>
+	<div>
+		{% block content %}
+		{% endblock %}
+	
+	</div>
+	<br>
+	<br>
+	<br>
+
+	<div class="afterbirth" >
+		<div class="content">
+			<h2>
+				Contacts:
+			</h2>
+			<div>
+				Number: +37360824400 | +46729024512<br>
+				Address: Молдова Кишинев, ул.  Каля Орхейулуй 119 <br>
+				Second address: Швеция ,ул Кунгспортсавеньен 3,город  Гётеборг <br>
+				Телеграм: @Proglobalwork <br>
+				Ватсап: +46729024512
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	// collect menus
+	var menus = document.getElementsByClassName('header__meta_dropdown')[0].getElementsByClassName('drop_but');
+	console.log(menus)
+
+	// onclick function
+	function drop_down_func(){
+		console.log('opened')
+		var menu = this.getElementsByClassName('drop_down')[0];
+		menu.style.display = 'inline-block';
+	};
+
+	// apply to all menus
+	for (let i=0; i < menus.length; i++) {
+		menus[i].onclick = drop_down_func;
+	};
+
+	function close_menus() {
+		for (let i=0; i < menus.length; i++) {
+			var menu = menus[i].getElementsByClassName('drop_down')[0];
+			menu.style.display = 'none';
+
+		};
+
+	}
+
+	// close dropdown menus
+	window.onclick = function(event){
+		var dot = event.target;
+		var is_it = true;
+
+		for (let i=0; i < menus.length; i++) {
+			if (menus[i].contains(dot)) {
+				is_it = false;
+			};
+		};
+
+		if (is_it) {
+			close_menus();
+		};
+
+	};
+
+</script>
+</html>
+
