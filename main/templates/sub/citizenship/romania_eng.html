@@ -3,21 +3,19 @@
 
 {% block content %}
 
-
 <div class="content__title_back" style="
 background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url({% static 'imgs/romania.jpg' %}); 	
 background-position: center; 
 background-repeat: no-repeat;
+background-size: cover;
 ">
 <!-- background-size: cover; -->
 	<div class="centered" style="text-align: center;">
-		<h1 style="color: white; text-shadow: 0 0 20px rgb(0, 0, 0, 0.4);">
-			Get citizenship in Romania <br> in just  6 month
+		<h1 class="centered" style="color: white; text-shadow: 0 0 20px rgb(0, 0, 0, 0.4); max-width:25ch; text-align: center;">
+			{{ texts.texts.Romania_first_titile_h1.text }}
 		</h1>
-		<div style="max-width: 65ch;">
-			We will help you to ligally get Romanian citizenship in just 6 month.
-			<br>
-			Our lawyers will do all the job, and you recive abitilty to traval in USA and Europe with E-2 Visa
+		<div style="max-width: 60ch;">
+			{{ texts.texts.Romania_under_first_titile_div.text }}
 		</div>
 		<br>
 		<br>
@@ -36,18 +34,10 @@ background-repeat: no-repeat;
 	<div class="centered">
 		<br>
 		<br>
-
 		<div style="display: inline-block; vertical-align: top;">
-			<h2>Why Romania?</h2>
+			<h2>{{ texts.texts.Romania_why_romania_title.text }}</h2>
 			<div style="max-width: 60ch;">
-				The holder of a Romanian passport automatically becomes a citizen of the European Union, and can freely cross the borders of all states, members of the European Union, as well as many countries of the world without obtaining an entry visa.
-				<br>
-				<br>
-				In addition, an important factor in favor of obtaining a Romanian passport is the cost of obtaining and ease of registration, Mircare specialists will tell you more.
-				<br>
-				<br>
-
-		    	The Romanian passport is the most affordable way to obtain an E-2 visa to the United States for citizens of the Russian Federation.
+				{{ texts.texts.Romania_why_romania_text_div.text|linebreaks }}
 			</div>
 		</div>
 		<div style="display: inline-block; vertical-align: top;">
@@ -60,31 +50,15 @@ background-repeat: no-repeat;
 <br>
 <div class="content">
 	<h1 class="centered">
-		Romanian Citizenship Programs
+		{{ texts.texts.Romanian_Citizenship_Program_title_h1.text}}
 	</h1>
 	<div class="centered good_points" style="text-align: center;" >
 		<div style="max-width:60ch">
 			<h2>
-				Citizenship for investments
+				{{ texts.texts.Citizenship_for_investments_title_h2.text }}
 			</h2>
 			<div>
-				In fact, it is quite difficult to get it: it requires opening a business in the country, providing new jobs and an impressive amount in the accounts.
-			</div>	
-		</div>
-		<div style="max-width:60ch">
-			<h2>
-				Naturalization
-			</h2>
-			<div>
-				To obtain citizenship in this way, it is important to live in the country for 8 years, or a shorter period if you have outstanding achievements and merits in Romania.			
-			</div>	
-		</div>
-		<div style="max-width:60ch">
-			<h2>
-				!Repatriation
-			</h2>
-			<div>
-				According to Art. 11 of the Law of Romania “On Citizenship” (No. 21 of March 1, 1991), you can acquire citizenship based on your roots, through the procedure for restoring the lost status of a citizen. This method is suitable for most citizens of the Russian Federation and the CIS, our lawyers will conduct a study in the archives and help you find the necessary documents.			
+				{{ texts.texts.Citizenship_for_investments_div.text }}
 			</div>	
 		</div>
 	</div>
@@ -94,7 +68,7 @@ background-repeat: no-repeat;
 <br>
 <div class="content">
 	<h1 class="centered">
-		Benefits of a Romanian passport
+		{{ texts.texts.Romanian_Benefits_of_a_Romanian_passport.text }}
 	</h1>
 	<br>
 	<div class="grid-master">
@@ -102,12 +76,11 @@ background-repeat: no-repeat;
 			<div>
 				<img src="{% static 'imgs/ligall.png' %}" alt="">
 				<h2>
-					Legal residence and work in the EU
+					{{ texts.texts.Legal_residence_and_work_in_the_EU.text }}
 				</h2>
 				<div>
-					Romanian citizens can freely move around the EU and permanently reside in any of the countries, as well as legally find employment in any European company.
+					{{ texts.texts.Romania_Legal_residence_and_work_in_the_EU_text_div.text }}
 				</div>
-	
 			</div>
 		</div>
 
@@ -115,22 +88,21 @@ background-repeat: no-repeat;
 			<div>
 				<img src="{% static 'imgs/lifelevel.png' %}" alt="">
 				<h2>
-					European standard of living and social guarantees
+					{{ texts.texts.European_standard_of_living_and_social_guarantees.text }}
 				</h2>
 				<div>
-					The European Union provides its residents with a high level of social guarantees, the opportunity to receive high-quality medical care and can study free of charge or on preferential terms in European universities.
+					{{ texts.texts.European_standard_of_living_and_social_guarantees_text_div.text }}
 				</div>
-	
 			</div>
 		</div>
 		<div>
 			<div>
 				<img src="{% static 'imgs/bussiness.png' %}" alt="">
 				<h2>
-					Business, bills and loans
+					{{ texts.texts.Romania_Business_bills_and_loans.text }}
 				</h2>
 				<div>
-					With a Romanian passport, you will become a full-fledged EU citizen and can do business in the EU, work, purchase real estate, open bank accounts in European banks, as well as get a loan with a low interest rate.
+					{{ texts.texts.Business_bills_and_loans_text_div.text }}
 				</div>
 	
 			</div>
@@ -139,10 +111,11 @@ background-repeat: no-repeat;
 			<div>
 				<img src="{% static 'imgs/visa_access.webp' %}" alt="">
 				<h2>
-					Availability of the E-2 visa in the USA
+					{{ texts.texts.Romania_Availability_of_the_E_2_visa_in_the_USA.text }}
+
 				</h2>
 				<div>
-					A Romanian passport allows you to obtain an E-2 visa to the United States, which is not available to citizens of the Russian Federation. This type of visa is one of the most affordable ways to legally immigrate to the United States and a popular reason for obtaining a Romanian passport.
+					{{ texts.texts.Romania_Availability_of_the_E_2_visa_in_the_USA_text_div.text }}
 				</div>
 	
 			</div>
@@ -154,13 +127,13 @@ background-repeat: no-repeat;
 <br>
 <div class="content">
 	<h1 class="centered">
-		Registration stages
+		{{ texts.texts.Registration_stages.text }}
 	</h1>
 	<b/r>
-	<div class="grid-master" style="grid-template-columns: repeat(auto-fill,  minmax(500px, 520px));">
+	<div class="grid-master reasons-to-apply" style="grid-template-columns: repeat(auto-fill,  minmax(500px, 520px));">
 		<div class="inline-bastards">
 			<div style="padding: 20px;">
-				<svg width="100" height="100" viewBox="-25 -30 300 300" xml:space="preserve">
+				<svg class="nice"width="100" height="100" viewBox="-25 -30 300 300" xml:space="preserve">
 
 					<defs>
 					</defs>
@@ -170,9 +143,11 @@ background-repeat: no-repeat;
 					</svg>
 			</div>
 			<div>
-				<h2>Step 1. Signing the contract</h2>
+				<h2 style="max-width: 25ch;">
+					{{ texts.texts.Step_1_Signing_the_contract.text }}
+				</h2>
 				<div style="max-width: 40ch; font-weight: 100;">
-					We conclude a contract with you for the provision of services, in which we prescribe all the stages of our work and the procedure for payment. We work in strict accordance with the legislation of the EU and the Russian Federation.
+					{{ texts.texts.Step_1_Signing_the_contract_text_div.text }}
 				</div>	
 			</div>
 		</div>
@@ -181,7 +156,7 @@ background-repeat: no-repeat;
 
 		<div class="inline-bastards">
 			<div style="padding: 20px;">
-				<svg width="100" height="100" viewBox="-55 -30 350 350">
+				<svg class="nice"width="100" height="100" viewBox="-55 -30 350 350">
 					<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
 						<path d="M 89.235 40.459 c -0.729 -0.976 -1.847 -1.536 -3.065 -1.536 H 74.085 v -8.511 c 0 -2.856 -2.324 -5.181 -5.181 -5.181 h -4.874 V 9.175 c 0 -1.96 -1.594 -3.554 -3.554 -3.554 H 13.819 c -1.96 0 -3.554 1.594 -3.554 3.554 v 6.312 H 5.18 c -2.856 0 -5.181 2.324 -5.181 5.181 v 49.46 v 7.593 v 2.517 c 0 2.284 1.858 4.143 4.142 4.143 h 70.042 c 0.011 0 0.021 0 0.033 0 c 2.389 0 4.245 -1.737 5.093 -4.753 l 10.531 -35.793 C 90.186 42.665 89.965 41.435 89.235 40.459 z M 68.905 28.231 c 1.202 0 2.181 0.978 2.181 2.181 v 8.511 h -7.055 V 28.231 H 68.905 z M 13.819 8.621 h 46.658 c 0.306 0 0.554 0.249 0.554 0.554 v 29.749 H 21.036 c -2.338 0 -4.42 1.57 -5.065 3.817 l -2.706 9.441 V 9.175 C 13.265 8.869 13.514 8.621 13.819 8.621 z M 4.142 81.379 c -0.63 0 -1.142 -0.513 -1.142 -1.143 V 77.72 v -7.593 v -49.46 c 0 -1.203 0.978 -2.181 2.181 -2.181 h 5.085 v 44.161 L 5.341 79.827 C 4.9 81.379 4.388 81.379 4.142 81.379 z M 86.963 42.986 L 76.426 78.797 c -0.331 1.179 -0.983 2.582 -2.222 2.582 c -0.003 0 -0.007 0 -0.011 0 H 7.985 c 0.086 -0.227 0.167 -0.469 0.241 -0.729 l 4.925 -17.184 h 0.114 v -0.397 l 5.59 -19.502 c 0.277 -0.968 1.174 -1.644 2.181 -1.644 h 65.133 c 0.361 0 0.57 0.208 0.663 0.332 S 87.066 42.639 86.963 42.986 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
 						<path d="M 53.125 20.484 H 20.287 c -0.829 0 -1.5 -0.671 -1.5 -1.5 s 0.671 -1.5 1.5 -1.5 h 32.838 c 0.828 0 1.5 0.671 1.5 1.5 S 53.954 20.484 53.125 20.484 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
@@ -190,15 +165,16 @@ background-repeat: no-repeat;
 				</svg>			</div>
 			<div>
 				<h2>
-					Step 2. Collection of documents
+					{{ texts.texts.Step_2_Collection_of_documents.text }}
 				</h2>
 				<div style="max-width: 40ch; font-weight: 100;">
-					Mircare lawyers will help you collect the necessary documents and tell you how to get the missing papers if you have any difficulties.				</div>	
-				</div>
+					{{ texts.texts.Step_2_Collection_of_documents_text.text }}
+				</div>	
+			</div>
 		</div>
 		<div class="inline-bastards">
 			<div style="padding: 20px;">
-				<svg width="100" height="100" viewBox="-25 -30 300 300">
+				<svg class="nice"width="100" height="100" viewBox="-25 -30 300 300">
 
 					<defs>
 					</defs>
@@ -212,14 +188,17 @@ background-repeat: no-repeat;
 				</svg>			
 			</div>
 			<div style="max-width: 41ch;">
-				<h2>Step 3. Applying for citizenship.</h2>
+				<h2>
+					{{ texts.texts.Romania_Step_3_Applying_for_citizenship.text }}
+				</h2>
 				<div style="max-width: 40ch; font-weight: 100;">
-					We send the entire package of documents certified by an apostille, you are assigned the time of your country or where you are to apply for citizenship at the Embassy of Romania				</div>	
+					{{ texts.texts.Romania_Step_3_Applying_for_citizenship_text.text }}
+				</div>	
 			</div>
 		</div>
 		<div class="inline-bastards">
 			<div style="padding: 20px;">
-				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100" height="100" viewBox="-50 -45 350 350" xml:space="preserve">
+				<svg class="nice"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100" height="100" viewBox="-50 -45 350 350" xml:space="preserve">
 
 					<defs>
 					</defs>
@@ -230,15 +209,17 @@ background-repeat: no-repeat;
 				</svg>			
 			</div>
 			<div style="max-width: 41ch;">
-				<h2>Step 4. Obtaining a Certificate of Citizenship</h2>
+				<h2>
+					{{ texts.texts.Step_4_Obtaining_a_Certificate_of_Citizenship.text }}
+				</h2>
 				<div style="max-width: 40ch; font-weight: 100;">
-					!!!We conclude a contract with you for the provision of services, in which we prescribe all.
+					{{ texts.texts.Step_4_Obtaining_a_Certificate_of_Citizenship_text_div.text }}
 				</div>	
 			</div>
 		</div>
 		<div class="inline-bastards">
 			<div style="padding: 20px;">
-				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100" height="100" viewBox="-70 -60 400 400" xml:space="preserve">
+				<svg class="nice"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100" height="100" viewBox="-70 -60 400 400" xml:space="preserve">
 
 					<defs>
 					</defs>
@@ -251,18 +232,18 @@ background-repeat: no-repeat;
 					</g>
 				</svg>			</div>
 			<div>
-				<h2>Step 5. Passing the oath</h2>
+				<h2>
+					{{ texts.texts.Romania_Step_5_Passing_the_oath.text }}
+				</h2>
 				<div style="max-width: 40ch; font-weight: 100;">
-					You will have access to Romanian language lessons and our teachers will prepare you for taking the oath of allegiance to Romania. In addition, we will prepare for an interview with representatives of the Citizenship Commission and explain all the nuances of taking the oath.				</div>	
+					{{ texts.texts.Romania_Step_5_Passing_the_oath_text_div.text }}
+				</div>	
 			</div>
 		</div>
 
 		<div class="inline-bastards">
 			<div style="padding: 20px;">
-				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100" height="100" viewBox="-35 -35 320 320" xml:space="preserve">
-
-					<defs>
-					</defs>
+				<svg class="nice"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100" height="100" viewBox="-35 -35 320 320" xml:space="preserve">
 					<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
 						<path d="M 73.689 17.943 c -0.018 0 -0.035 0 -0.052 -0.001 c -0.381 -0.02 -0.717 -0.254 -0.867 -0.604 l -2.069 -4.811 l -5.136 -1.023 c -0.373 -0.075 -0.672 -0.354 -0.771 -0.722 s 0.021 -0.759 0.307 -1.01 l 3.937 -3.454 l -0.614 -5.201 c -0.045 -0.378 0.129 -0.749 0.448 -0.956 c 0.321 -0.208 0.73 -0.215 1.056 -0.021 l 4.502 2.676 l 4.756 -2.191 c 0.343 -0.159 0.753 -0.109 1.047 0.131 c 0.296 0.24 0.431 0.626 0.347 0.998 l -1.154 5.108 l 3.554 3.847 c 0.259 0.28 0.336 0.682 0.199 1.037 s -0.463 0.603 -0.842 0.637 l -5.215 0.481 l -2.56 4.568 C 74.385 17.749 74.05 17.943 73.689 17.943 z M 67.943 9.938 l 3.664 0.73 c 0.323 0.064 0.593 0.284 0.724 0.586 l 1.477 3.433 l 1.826 -3.259 c 0.16 -0.287 0.452 -0.477 0.78 -0.507 l 3.721 -0.343 L 77.6 7.833 c -0.224 -0.242 -0.313 -0.578 -0.241 -0.899 l 0.823 -3.645 l -3.394 1.563 c -0.299 0.138 -0.647 0.12 -0.929 -0.049 l -3.212 -1.909 l 0.438 3.71 C 71.124 6.932 71 7.257 70.752 7.474 L 67.943 9.938 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
 						<path d="M 57.009 56.023 l -27.24 -22.058 c -0.005 -0.004 -0.011 -0.006 -0.016 -0.01 c -0.012 -0.009 -0.025 -0.015 -0.037 -0.024 c -0.087 -0.062 -0.182 -0.107 -0.282 -0.138 c -0.018 -0.005 -0.033 -0.013 -0.051 -0.017 c -0.109 -0.028 -0.221 -0.034 -0.333 -0.024 c -0.022 0.002 -0.043 0.006 -0.065 0.009 c -0.033 0.005 -0.067 0.005 -0.099 0.014 c -0.035 0.009 -0.059 0.037 -0.093 0.05 c -0.05 0.019 -0.103 0.023 -0.151 0.05 c -0.036 0.021 -0.057 0.055 -0.09 0.079 c -0.045 0.034 -0.085 0.068 -0.124 0.108 c -0.068 0.071 -0.12 0.148 -0.163 0.234 c -0.015 0.029 -0.044 0.049 -0.056 0.08 L 6.826 88.634 c -0.16 0.405 -0.039 0.869 0.301 1.144 C 7.309 89.925 7.532 90 7.756 90 c 0.192 0 0.384 -0.055 0.552 -0.166 l 48.624 -32.199 c 0.266 -0.176 0.432 -0.468 0.447 -0.786 C 57.394 56.53 57.257 56.224 57.009 56.023 z M 36.093 69.035 L 24.599 48.989 l 4.707 -11.944 l 15.162 26.444 L 36.093 69.035 z M 26.047 75.688 l -7.094 -12.372 l 4.707 -11.944 l 10.762 18.77 L 26.047 75.688 z M 18.014 65.699 l 6.362 11.095 L 9.85 86.414 L 18.014 65.699 z M 46.139 62.382 L 32.669 38.888 l 9.461 7.661 L 54.69 56.72 L 46.139 62.382 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
@@ -275,12 +256,21 @@ background-repeat: no-repeat;
 					</svg>
 			</div>
 			<div>
-				<h2>Step 6. Getting a Romanian Passport</h2>
+				<h2>
+					{{ texts.texts.Romania_Step_6_Getting_a_Romanian_Passport.text }}
+				</h2>
 				<div style="max-width: 40ch; font-weight: 100;">
-					At every stage, you will be accompanied by Mircare lawyers so that the procedure goes quickly and without difficulty. As a result, in 12-18 months you will have all the documents of a citizen in your hands: internal and foreign passports, driver's licenses (if necessary).			</div>
+					{{ texts.texts.Romania_Step_6_Getting_a_Romanian_Passport_text_div.text }}
+				</div>
 		</div>
-
-
+	</div>
+</div>
+<br>
+<br>
+<div class="content">
+	<h1 class="centered" style="color: rgb(255, 57, 87)">Here should be contact form</h1>
+	<div class="centered">
+		here actually
 	</div>
 </div>
 {% endblock %}

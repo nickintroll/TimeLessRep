@@ -20,8 +20,7 @@ body{
 }
 
 .header{
-	border-bottom:3px solid lightblue;
-
+	border-bottom: 1px solid black;
 
 	margin: -100rem -100rem 0px -100rem;
 	padding: 100rem 100rem 5px 100rem;
@@ -102,8 +101,8 @@ a{
 .content__title_back{
 	background-color: green;
 
-	margin: 0rem -100rem 0px -100rem;
-	padding: 30px 100rem 60px 100rem;
+	margin: 0rem -10rem 0px -10rem;
+	padding: 30px 10rem 60px 10rem;
 	
 	color: white;
 	text-shadow: 0px 0px 25px black;
@@ -131,21 +130,28 @@ a{
 	display: none;
 	position: absolute;
 	background-color: white;
-	padding: 10px;
 	font-size: 18px;
+
+	border-left: 1px solid   lightblue;
+	border-bottom: 1px solid lightblue;
+	margin-left: -10px;
+}
+
+.drop_down > h4{
+	margin: 0;
 }
 .drop_down > h4 > a{
 	font-size: 18px;
 	display: block;
-	border: 1px solid red;
-	margin-top: 10px;
-	padding: 8px;
-	background-color: lightcyan;
+	padding: 8px 16px 8px 16px;
+	transition: 0.3s;
+}
+.drop_down > h4 > a:hover{
+	transition: 0.3s;
+	background-color: rgb(245, 245, 245);
+	color: rgb(25, 25, 83)
 }
 
-.good_points > div{
-	/* border: 1px solid blue; */
-}
 .good_points > div > h2{
 	/* border: 1px solid green; */
 	border-bottom: 1px solid blue;
@@ -176,7 +182,18 @@ a{
 .grid-master > div > div > h2{
 	font-size: 20px;
 }
-svg{
+
+.grid-master > div > div > svg{
+	font-size: 20px;
+
+	height: 60px;
+	width: 60px;
+
+	padding-bottom: 10px;
+	border-bottom: 5px solid lightblue;
+}
+
+svg.nice{
 	background-color: rgb(148, 222, 247);
 	border-radius: 100px;
 }
@@ -191,4 +208,52 @@ svg{
 .inline-bastards > div{
 	vertical-align: top;
 	display: inline-block;
+}
+
+.reasons-to-apply > div > div > h2{
+	margin: 0px;
+}
+
+.facts > div{
+	margin: 10px;
+	border-left: 3px solid rgb(34, 149, 221);
+	padding-left: 6px;
+	max-width: 50ch;
+}
+
+.translation-buttons{
+	border-bottom: 1px solid gray;
+
+	margin-left: -10rem;
+	padding-left: -10rem;
+	margin-right: -10rem;
+	padding-right: -10rem;
+}
+
+
+.translation-buttons > div{
+	margin-top: -6px;
+}
+
+.translation-buttons > div > div{
+	transition: 0.3s;
+
+	display: inline;
+	vertical-align: top;
+
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+	background-color: rgb(233, 233, 233);
+
+
+	text-align: center;
+	padding: 3px 7px 0px 6px;
+	margin: 3px;
+}
+
+.translation-buttons > div > div:hover{
+	cursor: pointer;
+	transition: 0.3s;
+	color: white;
+	background-color: green;
 }
