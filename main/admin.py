@@ -8,8 +8,13 @@ class TextBlockAdmin(admin.ModelAdmin):
 
 @admin.register(Text)
 class TextAdmin(admin.ModelAdmin):
-	pass
+	search_fields = ('text', )	
+
 
 @admin.register(FeedBackRequest)
 class FeedBackRequestAdmin(admin.ModelAdmin):
-	pass
+	list_display = ('from_page', 'created', 'email', 'name')
+	list_filter = ('done', 'from_page')
+
+	search_fields = ('email', 'additional_message', 'name', 'phone')	
+	ordering = ('-created', 'done')

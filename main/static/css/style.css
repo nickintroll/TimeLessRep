@@ -10,6 +10,7 @@ body{
 
 	overflow-x: hidden;
 	letter-spacing: 0.5px;
+	color: rgb(54, 54, 54)
 }
 
 .content{
@@ -52,7 +53,7 @@ body{
 	display: inline-block;
 
 	padding: 0px 15px 5px 15px;
-	border-top: 3px solid rgba(135, 206, 250, 0);
+	border-bottom: 3px solid rgba(135, 206, 250, 0);
 	transition: 0.5s;
 
 }
@@ -61,7 +62,7 @@ body{
 	color: darkblue;
 	cursor: pointer;
 	transition: 0.5s;
-	border-top: 3px solid lightskyblue	
+	border-bottom: 3px solid lightskyblue	
 }
 
 .header__meta_dropdown > div > h3{
@@ -84,6 +85,7 @@ h1{
 }
 
 h2{
+	color: black;
 	margin:0;
 	margin-bottom: 30px;
 	font-family: 'Raleway', sans-serif;
@@ -256,4 +258,66 @@ svg.nice{
 	transition: 0.3s;
 	color: white;
 	background-color: green;
+}
+
+.request-form{
+	vertical-align: top;
+
+	display: inline-block;
+	border-radius: 0px 10px 10px 0px;
+	padding: 16px 20px 16px 20px;
+}
+.request-form > form > p > *{
+	max-height: 60px;
+	max-width: 270px;
+	
+	border: none;
+
+	border-bottom: 1px solid black;
+	padding: 6px;
+	font-family: 'Roboto', sans-serif;
+
+}
+
+.request-form > form > p > *::placeholder{
+	color: rgb(53, 53, 53);
+	font-family: 'Roboto', sans-serif;
+
+}
+
+.left-haft-form{
+	vertical-align: top;
+	display: inline-block;
+	border-radius: 10px 0px 0px 10px;
+
+	padding: 16px 20px 16px 20px;
+
+	margin-right: -4.5px;
+}
+
+#the-button{
+	background-color: orange;
+	border: none;
+	color: rgb(31, 31, 31);
+	position: absolute;
+	right: 20px;
+	bottom: 30px;
+	padding: 5px 30px 5px 30px;
+	font-family: 'Bebas Neue', cursive;
+	font-weight: 1000;
+	letter-spacing: 1px;
+	font-size: 25px;
+	border-radius: 10px;
+	transition: 0.3s;
+}
+
+#the-button:hover{
+	transition: 0.3s;
+	background-color: rgb(255, 146, 0);
+	color: black;
+}
+
+#the-button:active{
+	background-color: rgb(255, 193, 77);
+
 }

@@ -1,5 +1,4 @@
 from django.db import models
-from phonenumber_field.modelfields import PhoneNumberField
 
 from deep_translator import GoogleTranslator
 
@@ -65,13 +64,17 @@ class Text(models.Model):
 
 
 class FeedBackRequest(models.Model):
-	from_page = models.CharField(max_length=20)
+	from_page = models.CharField(max_length=20, null=True, blank=True)
 
 	email = models.EmailField()
 	name = models.CharField(max_length=32, null=False)
-	phone = PhoneNumberField(null=False)
+	phone = models.CharField(null=False, max_length=14)
 
 	additional_message = models.TextField()
 
 	done = models.BooleanField(default=False)
 	created = models.DateTimeField(auto_now_add=True)
+
+
+	class Meta:
+		ordering = ('created', )

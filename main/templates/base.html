@@ -267,5 +267,26 @@
 	};
 </script>
 
+<script>
+	var buts = document.getElementsByClassName('tricky-but')[0].getElementsByTagName('div');
+
+	buts[0].onclick = function() { 
+		window.scrollBy({
+			top: 300,
+			left: 0,
+			behavior: 'smooth'
+		});
+	};
+
+	buts[1].onclick = function() {
+		window.scrollBy({
+			top: 3500,
+			left: 0,
+			behavior: 'smooth'
+		});
+
+	};
+</script>
+
 </html>
 
