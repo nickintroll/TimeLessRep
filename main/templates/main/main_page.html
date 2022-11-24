@@ -1,12 +1,120 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="content">
-<h1>
-	about
-</h1>
+	<h1 class="centered">
+		Pgblwork
+	</h1>
+	<h2>
+		Citizenships
+	</h2>
+
+	<div class="map">
+		<div style="
+			background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url({% static 'imgs/romania.jpg' %}); background-size: cover">
+			<br>
+			<br>
+			<h2>
+				Romania
+			</h2>
+			<div>
+				Get Romanian <strong>citisenship in 6-18 month</strong> just for <strong>15.000€</strong>. And free for kids under 18.
+			</div>
+			<a href="{% url 'main:citi_roman_eng' %}">
+				<div id="the-button" style="right: auto; left: 20px; bottom: 50px;"> 
+					Learn more
+				</div>	
+			</a>
+		</div>
+		<div style="
+			background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url({% static 'imgs/bolgaria.jpg' %}); 	
+			background-size: cover;
+			">
+			<br>
+			<br>
+			<h2>
+				Bulgaria
+			</h2>
+			<div>
+				Get Bulgarian <strong>citisenship in 6-18 month</strong> just for <strong>15.000€</strong>. And free for kids under 18.
+			</div>
+			<a href="{% url 'main:citi_bolgar_eng' %}">
+				<div id="the-button" style="right: auto; left: 20px; bottom: 50px;"> 
+					Learn more
+				</div>	
+			</a>
+		</div>
+	</div>
+	<br>
+	<br>
+	<h2>
+		Working visas
+	</h2>
+
+	<div class="map">
+			<div style="
+				background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url({% static 'imgs/poland.jpg' %}); background-size: cover">
+			<br>
+			<br>
+			<h2>
+				Poland
+			</h2>
+			<div>
+				Get Poland Work visa in just 3 month and work for two years with an ability to extend the duration.
+			</div>
+			<a href="{% url 'main:workvisa_poland_eng' %}">
+				<div id="the-button" style="right: auto; left: 20px; bottom: 50px;"> 
+					Learn more
+				</div>	
+			</a>
+		</div>
+		<div style="
+		background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url({% static 'imgs/vengria.jpg' %}); background-size: cover">
+			<br>
+			<br>
+			<h2>
+				Vengria
+			</h2>
+			<div>
+				Get Vengria Work visa in just 1 month and work for full year with an ability to extend the duration.
+			</div>
+			<a href="{% url 'main:workvisa_vengria' %}">
+				<div id="the-button" style="right: auto; left: 20px; bottom: 50px;"> 
+					Learn more
+				</div>	
+			</a>
+		</div>
+
+	</div>
+	<br>
+	<br>
+	<h2>
+		Resident views
+	</h2>
+	<div class="map">
+		<div style="
+			background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url({% static 'imgs/moldavia.jpg' %}); background-size: cover">
+
+			<br>
+			<br>
+			<h2>
+				Moldavia
+			</h2>
+			<div>
+				Get moldavia resident card for 1 to 5 years of usage.
+			</div>
+			<a href="{% url 'main:resident_moldavia_eng' %}">
+				<div id="the-button" style="right: auto; left: 20px; bottom: 50px;"> 
+					Learn more
+				</div>
+			</a>
+		</div>
+	</div>
+
+
+
 
 </div>
-	<!-- // document.cookie="lang='what is the fuck'" -->
 
 {% endblock %}

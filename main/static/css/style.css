@@ -10,14 +10,13 @@ body{
 
 	overflow-x: hidden;
 	letter-spacing: 0.5px;
-	color: rgb(54, 54, 54)
+	color: rgb(54, 54, 54);
+	font-size: 18px;
 }
 
 .content{
 	max-width: 1200px;
 	margin: 0 auto;
-
-	/* border: 1px solid green; */
 }
 
 .header{
@@ -69,19 +68,14 @@ body{
 	margin: 0; 
 }
 
-.header > .content  > div > div > h3{
-
-	/* border: 1px solid blue; */
-
-}
 
 
 h1{
 	font-family: 'Bebas Neue', cursive;
 	letter-spacing: 2px;
-	font-size: 42px;
+	font-size: 50px;
 	color:rgb(2, 2, 49);
-	text-shadow: 0px 0px 30px rgb(192, 192, 192);
+	text-shadow: 0px 0px 30px rgb(192, 192, 192);	
 }
 
 h2{
@@ -108,6 +102,43 @@ a{
 	
 	color: white;
 	text-shadow: 0px 0px 25px black;
+}
+
+.map{
+	padding: 5px;
+
+	min-width: 600px;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fill,  minmax(300px, 300px));
+	gap: 30px;
+
+	color: white;
+}
+
+.map > div > h2{
+	color: white;
+}
+
+.map > div{
+	transition: 0.3s;
+	box-shadow: 0px 0px 20px gray;
+	border-radius: 10px;
+	position: relative;
+	padding: 20px;
+
+	text-shadow: 0px 0px 4px black;
+	height: 300px;
+}
+
+.map > div:hover{
+	text-shadow: 0px 0px 8px black;
+
+	transition: 0.3s;
+	box-shadow: 0px 0px 20px rgb(27, 27, 27);
+
+
+
 }
 
 .centered{
@@ -153,6 +184,11 @@ a{
 	background-color: rgb(245, 245, 245);
 	color: rgb(25, 25, 83)
 }
+
+.reasons-to-apply > div > .lil-text{
+	max-width: 40ch;
+}
+
 
 .good_points > div > h2{
 	/* border: 1px solid green; */
@@ -210,6 +246,13 @@ svg.nice{
 .inline-bastards > div{
 	vertical-align: top;
 	display: inline-block;
+}
+.reasons-to-apply{
+	display: grid;
+
+	justify-content: center;
+	grid-gap: 25px;
+	grid-template-columns: repeat(auto-fill,  minmax(500px, 520px))
 }
 
 .reasons-to-apply > div > div > h2{
@@ -296,7 +339,8 @@ svg.nice{
 }
 
 #the-button{
-	background-color: orange;
+	text-shadow: none;
+	background-color: rgb(255, 203, 107);
 	border: none;
 	color: rgb(31, 31, 31);
 	position: absolute;
@@ -312,6 +356,7 @@ svg.nice{
 }
 
 #the-button:hover{
+	cursor: pointer;
 	transition: 0.3s;
 	background-color: rgb(255, 146, 0);
 	color: black;
@@ -320,4 +365,140 @@ svg.nice{
 #the-button:active{
 	background-color: rgb(255, 193, 77);
 
+}
+
+.this-not-pne{
+	grid-template-columns: repeat(auto-fill,  minmax(200px, 200px))
+}
+
+.lil-text{
+	max-width: 60ch;
+}
+
+
+.this-one{
+	grid-template-columns: repeat(auto-fill,  minmax(550px, 550px));
+
+}
+
+@media only screen and (max-device-width: 1200px){
+	body{
+		overflow-x:auto;
+	}
+
+
+	.grid-master{
+		grid-template-columns: repeat(auto-fill,  minmax(80%, 80%));
+	}
+
+	br{
+		content: "";
+		display: block;
+		height: 20px;
+	}
+	h2{
+		font-size: 18px;
+		text-align: center;
+	}
+
+	.good_points > div > h2{
+		width: 100%;
+		text-align: center;
+		font-size: 38px;
+
+	}
+
+	.reasons-to-apply{
+		grid-template-columns: repeat(auto-fill,  minmax(800px, 800px))
+
+	}
+
+	.reasons-to-apply > div > div > h2{
+		font-size: 35px;
+	}
+
+
+	.reasons-to-apply > div > .lil-text{
+		max-width: 140ch;
+		font-size: 16px;
+	}
+	
+	.reasons-to-apply > div >.the-lil-text{
+		max-width: 75ch;
+	}
+	.the-lil-text{
+		max-width: 40ch;
+	}
+
+	.reasons-to-apply > div > div > div{
+		font-size: 30px;
+
+	}
+
+
+	h1{
+		text-align: center;		
+	}
+
+	/* ADD TO ALL PAGES */
+	.lil-text{
+		max-width: 100%;
+		font-size: 15px;
+	}
+	
+	.header{
+		margin: -5rem -5rem 0px -5rem;
+		padding: 5rem 5rem 5px 5rem;
+	}
+
+	.afterbirth{
+		margin: 0rem -5rem -2rem -5rem;
+		padding: 0rem 5rem 2rem 5rem;
+	
+		border-top: 3px solid lightblue;
+	}
+	
+	.header{
+		font-size: 40px;
+	}
+	.header > div >div > div > div> h3{
+		margin-top: 20px;
+	}
+
+	.drop_down > h4 > a{
+		padding: 50px;
+		font-size: 50px;
+		}
+	.drop_down > h4 > a:hover{
+		font-size: 50px;
+		background-color: cadetblue;
+		}
+
+
+	.this-one > div{
+		max-width: 200ch;
+		border: none;
+	}
+
+	.this-one > div > div{
+		font-size: 40px;
+
+	}
+	.this-one > div > div > h2{
+		font-size: 40px;
+	}
+
+	.the-lil-text-this{
+		max-width: 65ch;
+	}
+
+	.this-not-pne{
+		grid-template-columns: repeat(auto-fill,  minmax(300px, 300px));
+		gap: 40px;
+	}
+	
+
+	.this-not-pne > div > div > h2{
+		text-align: center;
+	}
 }

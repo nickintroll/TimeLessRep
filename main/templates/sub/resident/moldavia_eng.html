@@ -10,11 +10,11 @@ background-repeat: no-repeat;
 background-size: cover;
 ">
 <!-- background-size: cover; -->
-	<div class="centered" style="text-align: center;">
+	<div class="centered lil-text" style="text-align: center; ">
 		<h1 style="color: white; text-shadow: 0 0 20px rgb(0, 0, 0, 0.4);">
-			{{ texts.texts.Moldavia_start_big_title_h1.text|linebreaks }}
+			{{ texts.texts.Moldavia_start_big_title_h1.text }}
 		</h1>
-		<div style="max-width: 65ch;">
+		<div style="max-width: 65ch;" class="centered">
 			{{ texts.texts.Moldavia_resident_under_big_title_div.text }}
 		</div>
 		<br>
@@ -36,8 +36,8 @@ background-size: cover;
 	<h1 class="centered" style="text-align: center;">
 		{{ texts.texts.Moldavia_resident_ground_to_get_res_title_h1.text|linebreaks }}
 	</h1>
-	<div class="grid-master reasons-to-apply" style="grid-template-columns: repeat(auto-fill,  minmax(200px, 200px))">
-		<div class="">
+	<div class="grid-master reasons-to-apply this-not-pne">
+		<div>
 			<div class="centered">
 				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="30" height="30" viewBox="0 0 256 256" xml:space="preserve">
 					<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
@@ -137,7 +137,7 @@ background-size: cover;
 <br>
 
 <div class="content">
-	<h2 class="centered">
+	<h2 class="centered" style="min-width: 20ch;">
 		{{ texts.texts.You_have_to_know.text }}
 	</h2>
 	<br>
@@ -194,9 +194,24 @@ background-size: cover;
 <br>
 <br>
 <div class="content">
-	<h1 class="centered" style="color: rgb(255, 57, 87)">Here should be contact form</h1>
-	<div class="centered">
-		here actually
+	<div class="centered" style="height: 300px; 	box-shadow: 0px 0px 20px rgb(94, 94, 94); border-radius: 10px;">
+		<div class="left-haft-form" style="height: 89%; border-right: 1px solid rgb(226, 226, 226); 	position: relative;		">
+			<h1 style="text-align: right;">
+				{{  texts.texts.form__title_on_left_h1.text }}
+			</h1>
+			<div style="font-weight: 100; text-align: right; max-width: 40ch;">
+				{{  texts.texts.form__text_explanation_div.text }}
+			</div>
+			<input type="submit" form="req_form_here" value="{{ texts.texts.Send_but.text }}" id="the-button">
+		</div>
+		<div class="request-form" style="height: 95%;">
+			<form method="POST" id="req_form_here">
+				{{ req_form.as_p }}
+
+				{% csrf_token %}
+			</form>
+	
+		</div>
 	</div>
 </div>
 {% endblock %}

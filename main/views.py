@@ -65,3 +65,8 @@ def resident_moldavia(request):
 # work visa
 def workvisa_poland(request):
 	return _render(request, 'sub/work_visa/poland_eng.html', from_page='workvisa for poland')
+
+def workvisa_vengria(request):
+	# created in 1 month
+	# works for 1 year
+	return _render(request, 'sub/work_visa/vengria.html', from_page='workvisa for vengria')
