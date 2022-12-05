@@ -14,11 +14,19 @@ body{
 	font-size: 18px;
 }
 
+
+.the-lil-text-this{
+	max-width: 40ch;
+}
 .content{
 	max-width: 1200px;
 	margin: 0 auto;
 }
 
+.this-content{
+	max-width: 1000px;
+
+}
 .header{
 	border-bottom: 1px solid black;
 
@@ -378,6 +386,39 @@ svg.nice{
 
 .this-one{
 	grid-template-columns: repeat(auto-fill,  minmax(550px, 550px));
+
+}
+
+.main-big-title > div{
+	/* border: 1px solid green; */
+}
+
+.main-big-title{
+	/* border: 1px solid red; */
+}
+.main-big-title > div > h1{
+	color: white;
+	text-shadow: 0px 0px 25px black;
+	margin: 0;
+	padding: 0;
+}
+
+#scroll-fown-but{	
+	font-family: 'Bebas Neue', cursive;
+	font-size: 25px;
+	transition: 0.3s;
+	font-weight: 1000;
+	background-color: yellow;
+	color: black;
+	padding: 7px 25px 5px 25px;
+	width: fit-content;
+	border-radius: 100px;
+}
+#scroll-fown-but:hover{
+	color: white;
+	cursor: pointer;
+	transition: 0.3s;
+	background-color: rgb(205, 86, 50);
 
 }
 
