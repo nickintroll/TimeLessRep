@@ -25,7 +25,9 @@ def _render(req, template, context={}, from_page='any'):
 		# save request
 		if req.method == 'POST':
 			form = RequestForm(req.POST)
+			
 			if form.is_valid():
+			
 				db_req = form.save(commit=False)
 				db_req.from_page = from_page
 				db_req.save()

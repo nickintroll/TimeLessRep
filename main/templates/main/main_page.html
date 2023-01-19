@@ -17,16 +17,16 @@ background-size: cover;
 	<div class="content this-content main-big-title inline-bastards">
 		<div>
 			<h1 style="max-width: 25ch;">
-				Legal help with moving, emigration, foreign work and a lot more
+				{{ texts.texts.main_page_title.text|linebreaks }}
 			</h1>	
 			<div>
 				<br>
-				Scroll down and see our service options
+				{{ texts.texts.main_page__scrollandsee.text}}
 				<br>
 				<br>
 				<br>
 				<div id="scroll-fown-but">
-					Learn more
+					{{ texts.texts.learn_more.text}}
 				</div>
 			</div>
 		</div>
@@ -109,8 +109,8 @@ background-size: cover;
 </div>
 <br>
 <div class="content">
-	<h2>
-		Citizenships
+	<h2>  
+		{{ texts.texts.Citizenships.text }}
 	</h2>
 
 	<div class="map">
@@ -119,15 +119,16 @@ background-size: cover;
 			<br>
 			<br>
 			<h2>
-				Romania
+				{{ texts.texts.Romania.text }}
 			</h2>
 			<div>
-				Get Romanian <strong>citisenship in 6-18 month</strong> just for <strong>15.000€</strong>. And free for kids under 18.
+				{{ texts.texts.romania_welcome.text }}
 			</div>
 			<a href="{% url 'main:citi_roman_eng' %}">
 				<div id="the-button" style="right: auto; left: 20px; bottom: 50px;"> 
-					Learn more
-				</div>	//
+										{{ texts.texts.learn_more.text}}
+
+				</div>
 			</a>
 		</div>
 		<div style="
@@ -137,14 +138,16 @@ background-size: cover;
 			<br>
 			<br>
 			<h2>
-				Bulgaria
+				{{ texts.texts.Bulgaria.text}}
+				
 			</h2>
 			<div>
-				Get Bulgarian <strong>citisenship in 6-18 month</strong> just for <strong>15.000€</strong>. And free for kids under 18.
+				{{ texts.texts.Bulgaria_welcome.text}}
 			</div>
 			<a href="{% url 'main:citi_bolgar_eng' %}">
 				<div id="the-button" style="right: auto; left: 20px; bottom: 50px;"> 
-					Learn more
+										{{ texts.texts.learn_more.text}}
+
 				</div>	
 			</a>
 		</div>
@@ -152,7 +155,9 @@ background-size: cover;
 	<br>
 	<br>
 	<h2>
-		Working visas
+		{{ texts.texts.Working_visas.text}}
+
+		
 	</h2>
 
 	<div class="map">
@@ -161,14 +166,15 @@ background-size: cover;
 			<br>
 			<br>
 			<h2>
-				Poland
+				{{ texts.texts.Poland.text}}
 			</h2>
 			<div>
-				Get Poland Work visa in just 3 month and work for two years with an ability to extend the duration.
+				{{ texts.texts.Poland_welcome.text}}
 			</div>
 			<a href="{% url 'main:workvisa_poland_eng' %}">
 				<div id="the-button" style="right: auto; left: 20px; bottom: 50px;"> 
-					Learn more
+										{{ texts.texts.learn_more.text}}
+
 				</div>	
 			</a>
 		</div>
@@ -177,14 +183,14 @@ background-size: cover;
 			<br>
 			<br>
 			<h2>
-				Vengria
+				{{ texts.texts.Hungary.text}}
 			</h2>
 			<div>
-				Get Vengria Work visa in just 1 month and work for full year with an ability to extend the duration.
+				{{ texts.texts.Hungary_welcome.text}}
 			</div>
 			<a href="{% url 'main:workvisa_vengria' %}">
 				<div id="the-button" style="right: auto; left: 20px; bottom: 50px;"> 
-					Learn more
+									{{ texts.texts.learn_more.text}}
 				</div>	
 			</a>
 		</div>
@@ -193,7 +199,7 @@ background-size: cover;
 	<br>
 	<br>
 	<h2>
-		Resident views
+		{{ texts.texts.Residence_permits.text}}
 	</h2>
 	<div class="map">
 		<div style="
@@ -202,20 +208,26 @@ background-size: cover;
 			<br>
 			<br>
 			<h2>
-				Moldavia
+				{{ texts.texts.Moldavia.text}}
+				
 			</h2>
 			<div>
-				Get moldavia resident card for 1 to 5 years of usage.
+				{{ texts.texts.Moldavia_welcome.text}}
 			</div>
 			<a href="{% url 'main:resident_moldavia_eng' %}">
 				<div id="the-button" style="right: auto; left: 20px; bottom: 50px;"> 
-					Learn more
+					{{ texts.texts.learn_more.text}}
 				</div>
 			</a>
 		</div>
 	</div>
 
-
+	<script>
+		var but = document.getElementById('scroll-fown-but')
+		but.onclick = function() {
+			window.scrollTo(0, 600);
+		};
+	</script>
 
 
 </div>
