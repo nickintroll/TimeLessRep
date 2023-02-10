@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+	<style>
+		h1.no-margin{
+			margin-bottom: 0px;
+		}
+		select{
+			background-color: rgb(231, 231, 231);
+		}
+		input[type='date']{
+			padding: 7px 20px 7px 20px;
+		}
+		input[type='submit']{
+			padding-left: 30px;
+			padding-right: 30px;
+			font-size: 20px;
+			font-weight: 1000;
+			margin: 0 auto !important;
+			border-radius: 3px;
+		}
+	</style>
+	{% if note %}
+		<div id="note">
+			<div id="note-closer">
+				x
+			</div>
+			<h2>
+				Your request was saved
+			</h2>
+			<div>
+				Our service got notification and we will contact you as soon as we can. Thank you for choosing us.
+			</div>
+		</div>
+	{% endif %}
+<div class="content__title_back" style="
+background: linear-gradient( rgba(0, 0, 0, 0.7) 70%, rgba(0, 0, 0, 0.8) ), url({% static 'imgs/dubai-skyline-at-dusk-jpg_header-144981.avif' %}); 	
+background-position: center; 
+background-repeat: no-repeat;
+background-size: cover;
+min-height: 50vh;
+position: relative;
+text-shadow: 0px 0px 5px black;
+">
+<div class="centered" style="margin-top: 5%">
+	<h1 style="color: white; text-shadow: 0 0 20px rgb(0, 0, 0, 0.4); max-width: 30ch;">
+		Dubai visa
+	</h1>	
+</div>
+<div class="centered pho-sma" style="text-align: center; color: rgb(211, 211, 211)">
+	Figure out price to get visa for your family with calculator below. <br>
+	Leave your data so we can make visa for you at the bottom of page. <br> 
+	We also can extend your visa duration, information i bellow the calculator
+
+</div>
+<div class="tricky-but centered" style="margin-top: 30px; text-shadow: none;">
+	<div>
+		Learn more
+	</div>
+	 or 
+	<div>
+		contact us
+	</div>
+</div>
+
+</div>
+	<form method="post">
+		<div class="content" style="padding-top: 40px; padding-bottom: 50px; text-align: center;">
+			<div>
+				<a href="{% url 'main:my_requests' %}">I have created a request</a>
+			</div>
+			<h1 style="margin-top: 0px; margin-bottom: 10px;">
+				Calculate price for your family
+			</h1>
+			<div>
+				{{ form.visa_duration }}
+			</div>		
+			<div>
+				<div style="margin-top: 5px;">
+					<div id="culc-people" style="overflow: auto">
+						Nobody
+					</div>
+					<div class="inline-bastards">
+						<div class="culc-choices">
+							+ <span id="one_person">Person</span>
+							<span id="kid_person">Kid under 18yo</span>
+						</div>	
+					</div>
+					<div>
+						<h2 style="font-size: 25px;" >Total: <span id="culc_results"> 0</span> aed</h2>
+					</div>		
+
+				</div>
+
+			</div>
+		</div>
+		<div class="content__title_back" style="
+background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url({% static 'imgs/dubai-marina-skyline-2c8f1708f2a1.avif' %}); 	
+background-position: bottom; 
+background-repeat: no-repeat;
+background-size: cover;
+min-height: 50vh;
+">
+<div class="centered" style="text-align: center; margin-top: 10%;">
+	<h1 class="centered" style="color: white; text-shadow: 0 0 20px rgb(0, 0, 0, 0.4); max-width: 30ch;margin-top: 60px; margin-bottom: 30px;">
+		Your request
+	</h2>
+	<div class="pho-sma">
+		To leave your request, fill out the form below. We will contact you as soon as possible.
+		Leave separeted request for each member of your family
+	</div>
+</div>
+</div>
+<div class="centered inline-bastards cool-inp-name small-form">
+	<div>
+		{{ form.first_name }}		
+	</div>
+	<div>
+		{{ form.last_name }}
+	</div>
+</div>
+	<div class="content">
+		<div class="inline-bastards cool-inp-name centered small-form">
+			<div>
+				<div style="text-align: center;">
+					<h4>
+						My passport from
+					</h4>
+				</div>
+				{{ form.passport_registered_at  }}
+			</div>
+			<div>
+				<div style="text-align: center;">
+					<h4>
+						I'm now located in
+					</h4>
+				</div>
+				{{ form.now_located_in }}
+			</div>
+		</div>
+		<div class="centered inline-bastards small-form">
+			<div class="pull-to-left" >
+				<h4>
+					Passport series
+				</h4>
+				{{ form.passport_series }}
+			</div>
+			<div style="text-align: center;">
+				<h4>
+					Expiration date
+				</h4>
+				{{ form.passport_closure_date }}
+			</div>	
+		</div>
+		<div class="centered">
+			<h4>
+				Contact information
+			</h4>
+			{{ form.contact_information }}
+		</div>
+		{% csrf_token %}
+		<div class="centered">
+			<input type="submit" value="Confirm" id="confirm-but">	
+		</div>
+	</div>
+	</form>	
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+	var field = document.getElementById('culc-people');
+	var person_but = document.getElementById('one_person');
+	var kid_but = document.getElementById('kid_person');
+	var result_place = document.getElementById('culc_results');
+	
+	var visa_type = document.getElementById('id_visa_duration');
+
+	var calculte = function() {
+		var result = 0;
+		let visa = visa_type.value;
+
+		for (let child of field.children) {
+			if (child.innerHTML.includes('Person')) {
+				if (visa === 'Trourist visa(30 days)') {
+					result += 550;
+				} else if (visa === 'Trourist visa(60 days)') {
+					result += 750;
+				} else if (visa === 'Multivisa(30 days)') {
+					result += 800;
+				} else if (visa === 'Multivisa(60 days)') {
+					result += 1250;	
+				}	
+			};
+			if (child.innerHTML.includes('Kid')) {
+				if (visa === 'Trourist visa(30 days)') {
+					result += 300;
+				} else if (visa === 'Trourist visa(60 days)') {
+					result += 400;
+				} else if (visa === 'Multivisa(30 days)') {
+					result += 600;
+				} else if (visa === 'Multivisa(60 days)') {
+					result += 750;	
+				}	
+			};
+			
+		};
+		console.log(visa_type.value)
+		result_place.innerHTML = result;
+	};
+
+	var remove_item_from_culc = function(par_id){
+		let del_target = document.getElementById(par_id);
+
+		field.removeChild(del_target);
+		calculte();
+
+		if (field.innerHTML.length === 0) {
+			field.innerHTML = 'Nobody'
+		};
+	};
+
+	var add_item_to_culc = function(e) {		
+		let item = '<div class="removeable" id="'+e.target.innerHTML+'" onclick="remove_item_from_culc(this.id)">' + e.target.innerHTML+ '</div>';
+		if (field.innerHTML.trim() === 'Nobody'){
+			field.innerHTML = item;
+		} else{
+			field.innerHTML += item;
+		};
+		calculte();
+	};
+
+	person_but.onclick = add_item_to_culc;
+	kid_but.onclick = add_item_to_culc;
+	visa_type.onchange = calculte;
+
+</script>
+
+<script>
+	document.getElementById('note-closer').onclick = function() {
+		document.getElementById('note').style['display'] = 'none'
+	}
+</script>
+{% endblock %}

@@ -3,7 +3,11 @@ from . import views
 
 app_name = 'main'
 urlpatterns = [
-	path('', views.main_page, name='main_page'),
+	path('', views.dubai_main_page, name='main_page'),
+	path('travel/', views.main_page, name='host_page'),
+	# get request dubai
+	path('get_my_request/', views.find_request, name='my_requests'),
+
 
 	# citizenships
 	path('citizen/romania/', views.citi_romanian_eng, name='citi_roman_eng'),

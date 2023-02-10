@@ -30,7 +30,7 @@ DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.0.105', 'localhost', '127.0.0.1', ]
-
+CSRF_TRUSTED_ORIGINS = ['https://*.proglobalwork.com','https://*.127.0.0.1', 'https://*.192.168.0.105']
 
 # Application definition
 INSTALLED_APPS = [

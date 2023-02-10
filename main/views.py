@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
-from .models import TextBlock
-from .forms import RequestForm
-
+from .models import TextBlock, DubaiVisaRequest
+from .forms import RequestForm, DubaiVisaRequestForm, RequestSearchForm
+from aiogram import Bot
+from asyncio import run as asyncrun
 
 def get_texts(lang):
 	texts = {}
@@ -15,8 +16,7 @@ def get_texts(lang):
 	return {'texts': texts}
 
 
-def _render(req, template, context={}, from_page='any'):
-
+def _render(req, template, context={}, from_page='any', req_form=True):
 	lang = 'en'
 
 	if 'lang' in req.COOKIES:
@@ -32,24 +32,73 @@ def _render(req, template, context={}, from_page='any'):
 				db_req.from_page = from_page
 				db_req.save()
 
-		context['req_form'] = RequestForm
 		context['texts'] = get_texts(req.COOKIES['lang'])
 
-		return render(req, template, context)
+		req = render(req, template, context)
 
 	else:
 # 		print('Settings default lang to', lang)
-		context['req_form'] = RequestForm
 		context['texts'] = get_texts(lang)
 
 
-		ret = render(req, template, context)
-		ret.set_cookie('lang', lang)
+		req = render(req, template, context)
+		req.set_cookie('lang', lang)
 
-		return ret
+	context['req_form'] = RequestForm	
+
+	if req_form != True:
+		del context['req_form']
+
+	return req
+
+def find_request(request):
+	message = None
+	result = None
+
+	form = RequestSearchForm(request.GET)
+	if form.is_valid():
+		cd = form.cleaned_data
+		if len([i for i in cd['request'].replace(' ', '') if not i.isdigit()]):
+			print('wrong request')
+		else:
+			try:
+				result = DubaiVisaRequest.objects.get(passport_series=cd['request'].replace(' ', ''))
+			except DubaiVisaRequest.DoesNotExist:
+				message = 'Did not find anyting for that request'
 
 
-# working part(all that lower)
+
+	return _render(request, 'main/request_get.html', context={'form': form, 'message': message, 'result': result}) 
+
+async def bot_notify(bot, chat, message):
+	await bot.send_message(chat, message)
+	return True
+
+
+def dubai_main_page(request):
+	note = None
+	form = DubaiVisaRequestForm()
+
+	if request.method == 'POST':
+		form = DubaiVisaRequestForm(request.POST)
+	
+		if form.is_valid():
+			form.save()
+			note = 'Your request is saved, here you can check it\'s status, '
+
+			bot = Bot('6184370515:AAFifYARgWR6PzickGu-FLR5vQjSEdopz0w')
+
+			admins = [1941865554, 1751516505]
+			for ad in admins:
+				try:
+					asyncrun(bot_notify(bot, ad, 'New dubai request! \nCheck https://proglobalwork.com/controller_admin_page/ \n\n login:admin\npassword:ne12wpa41ss5352wor234dJustForUsToUSe'))
+
+				except:
+					pass
+			# NOTIFICATION TO TELEGRAM
+	return _render(request, 'main/dubai_main.html', context={'form': form, 'note':note})
+
+
 def main_page(request):
 	return _render(request, 'main/main_page.html', from_page='main page')
 

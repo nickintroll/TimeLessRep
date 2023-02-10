@@ -8,12 +8,19 @@
 body{
 	font-family: 'Roboto', sans-serif;
 
-	overflow-x: hidden;
-	letter-spacing: 0.5px;
-	color: rgb(54, 54, 54);
+	color: rgb(40, 40, 40);
 	font-size: 18px;
 }
 
+
+*{
+	margin: 0;
+	padding: 0
+}
+
+.pho-sma{
+	max-width: 70ch;
+}
 
 .the-lil-text-this{
 	max-width: 40ch;
@@ -28,10 +35,8 @@ body{
 
 }
 .header{
-	border-bottom: 1px solid black;
-
-	margin: -100rem -100rem 0px -100rem;
-	padding: 100rem 100rem 5px 100rem;
+	/* border-bottom: 1px solid black; */
+	box-shadow: 0px 5px 10px rgba(128, 128, 128, 0.493);
 }
 
 .header > .content > div{
@@ -76,7 +81,9 @@ body{
 	margin: 0; 
 }
 
-
+.tit{
+	text-align: left;
+}
 
 h1{
 	font-family: 'Bebas Neue', cursive;
@@ -89,13 +96,17 @@ h1{
 h2{
 	color: black;
 	margin:0;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 	font-family: 'Raleway', sans-serif;
 	font-size: 28px;
 }
 
 h3{
 	font-weight: 100;
+}
+h4{
+	color: black;
+	margin-bottom: 0;
 }
 a{
 	color: rgb(2, 2, 49);
@@ -105,11 +116,15 @@ a{
 .content__title_back{
 	background-color: green;
 
-	margin: 0rem -10rem 0px -10rem;
-	padding: 30px 10rem 60px 10rem;
+	margin: 0rem 0 0px 0;
+	padding: 30px 0rem 60px 0rem;
 	
 	color: white;
 	text-shadow: 0px 0px 25px black;
+}
+textarea{
+	padding: 8px 20px 8px 20px;
+	max-height: 15ch;
 }
 
 .map{
@@ -148,6 +163,48 @@ a{
 
 
 }
+.culc-choices > span, #culc-people > div{
+	display: inline-block;
+	background-color: rgb(179, 207, 233);
+	padding: 6px 20px 6px 20px;
+	border-radius: 20px;
+	margin: 3px;
+
+	transition: 0.3s;
+}
+.culc-choices > span{
+	margin-left: 0px;
+}
+
+.culc-choices > span:hover{
+	cursor: pointer;
+	background-color: rgb(119, 238, 172);
+	transition: 0.3s;
+}
+
+#culc-people{
+	background-color: rgb(248, 248, 248);
+	border: 2px solid rgb(199, 199, 199);
+	max-width: 70ch;
+	max-height: 4ch;
+	padding: 10px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+	text-align: left;
+	margin-top: 15px;
+	margin: 0 auto;
+}
+
+#culc-people > div{
+	display: inline-block;
+}
+#culc-people > div:hover{
+	transition: 0.3s;
+
+	background-color: lightcoral;
+	cursor: pointer;
+}
+
 
 .centered{
 	width: fit-content;
@@ -163,12 +220,17 @@ a{
 	color: black
 }
 
+.tricky-but > div:hover{
+	cursor: pointer;
+}
+
 .tricky-but > div + div{
 	background-color: lightgreen;
 }
 
 .drop_down{
 	display: none;
+	z-index: 1000;
 	position: absolute;
 	background-color: white;
 	font-size: 18px;
@@ -219,10 +281,29 @@ a{
 
 }
 
-.grid-master > div{
-}
 .grid-master > div > div > img{
 	width: 240px;
+}
+
+.cool-inp-name{
+	margin-top: -10px;
+	font-size: 16px;
+}
+
+.cool-inp-name > div > input, .cool-inp-name > div > select, input{
+	border: 2px solid gray;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 25px;
+	margin-top: -10px;
+}
+.pull-to-left{
+	margin-left:-37px; text-align: center;
+
+}
+
+.cool-inp-name > div > select, input{
+	margin:0;
 }
 
 .grid-master > div > div > h2{
@@ -245,10 +326,8 @@ svg.nice{
 }
 
 .afterbirth{
-	margin: 0rem -100rem -2rem -100rem;
-	padding: 0rem 100rem 2rem 100rem;
-
 	border-top: 3px solid lightblue;
+	padding-bottom: 50px;
 }
 
 .inline-bastards > div{
@@ -275,40 +354,37 @@ svg.nice{
 }
 
 .translation-buttons{
-	border-bottom: 1px solid gray;
+	position: absolute;
+	top: 100px;
 
-	margin-left: -10rem;
-	padding-left: -10rem;
-	margin-right: -10rem;
-	padding-right: -10rem;
+	z-index: 1000;
 }
 
-
-.translation-buttons > div{
-	margin-top: -6px;
+#id_visa_duration{
+	border: 1px solid gray;
+	font-size: 16px;
+	padding: 5px 18px 5px 18px;
+	border-radius: 3px;
+	background-color: rgb(224, 224, 224);
 }
+
 
 .translation-buttons > div > div{
 	transition: 0.3s;
 
-	display: inline;
-	vertical-align: top;
-
-	border-left: 1px solid gray;
-	border-right: 1px solid gray;
 	background-color: rgb(233, 233, 233);
-
+	border-radius: 0px 5px 5px 0px;
 
 	text-align: center;
-	padding: 3px 7px 0px 6px;
-	margin: 3px;
+	padding: 10px 7px 8px 6px;
+	margin-bottom: 10px;
 }
 
 .translation-buttons > div > div:hover{
 	cursor: pointer;
 	transition: 0.3s;
 	color: white;
-	background-color: green;
+	background-color: rgb(72, 153, 72);
 }
 
 .request-form{
@@ -333,6 +409,64 @@ svg.nice{
 .request-form > form > p > *::placeholder{
 	color: rgb(53, 53, 53);
 	font-family: 'Roboto', sans-serif;
+
+}
+
+#confirm-but{
+	background-color: rgb(255, 203, 107);
+	border: none;
+	color: rgb(31, 31, 31);
+	padding: 5px 30px 5px 30px;
+	font-family: 'Bebas Neue', cursive;
+	font-weight: 1000;
+	letter-spacing: 1px;
+	font-size: 25px;
+	border-radius: 10px;
+	transition: 0.3s;
+	margin-top: 10px;
+}
+#note{
+	text-align: left !important;
+	position: fixed;
+	background-color: white;
+	border: 1px solid black;
+	
+	z-index: 10000;
+	top: 15%;
+	left: 30%;
+
+	min-width: 300px;
+	max-width: 500px;
+	padding: 30px;
+
+	border-radius: 10px;
+	box-shadow: 0px 0px 100px black;
+}
+#note-closer{
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	background-color: rgb(221, 120, 120);
+	color: rgb(61, 0, 0);
+	padding: 9px 15px 10px 15px;
+	transition: 0.3s;
+	border-radius: 0px 0px 0px 10px;
+
+}
+
+#note-closer:hover{
+	transition: 0.3s;
+	background-color: rgb(182, 96, 96);
+	color: rgb(21, 0, 0);
+	cursor: pointer;
+
+}
+
+
+#confirm-but:hover{
+	background-color: rgb(255, 183, 97);
+	cursor: pointer;
 
 }
 
@@ -423,10 +557,16 @@ svg.nice{
 }
 
 @media only screen and (max-device-width: 1200px){
-	body{
-		overflow-x:auto;
+	.tit{
+		
+		margin: 0 auto !important;
+		/* border: 1px solid red !important; */
 	}
 
+	body{
+		overflow-x:auto;
+		font-size: 16px;
+	}
 
 	.grid-master{
 		grid-template-columns: repeat(auto-fill,  minmax(80%, 80%));
@@ -436,6 +576,9 @@ svg.nice{
 		content: "";
 		display: block;
 		height: 20px;
+	}
+	h1{
+		font-size: 100px;
 	}
 	h2{
 		font-size: 18px;
@@ -476,7 +619,6 @@ svg.nice{
 
 	}
 
-
 	h1{
 		text-align: center;		
 	}
@@ -487,15 +629,8 @@ svg.nice{
 		font-size: 15px;
 	}
 	
-	.header{
-		margin: -5rem -5rem 0px -5rem;
-		padding: 5rem 5rem 5px 5rem;
-	}
 
-	.afterbirth{
-		margin: 0rem -5rem -2rem -5rem;
-		padding: 0rem 5rem 2rem 5rem;
-	
+	.afterbirth{	
 		border-top: 3px solid lightblue;
 	}
 	
@@ -537,9 +672,86 @@ svg.nice{
 		grid-template-columns: repeat(auto-fill,  minmax(300px, 300px));
 		gap: 40px;
 	}
-	
-
 	.this-not-pne > div > div > h2{
 		text-align: center;
 	}
+	.header > .content > div{
+		width: fit-content;
+	}	
+
+	.header{
+		/* border-bottom: 1px solid black; */
+		padding-bottom: 10px;
+		box-shadow: none;
+		margin-bottom: 0px;
+	}
+	
+	.header__meta_dropdown{
+		text-align: center;
+	}
+	.pho-sma{
+		max-width: none;
+		width: 100%;
+		text-align: center;
+	}
+	.tricky-but{
+		font-size: 50px !important;
+	}
+	.translation-buttons{
+		position: fixed;
+		top: 20vh;
+	}
+	.translation-buttons > div > div{
+		font-size: 30px !important;
+		
+	}
+	.small-form > div{
+		margin-left: 10%;
+		margin-bottom: 10px;
+	}
+	.small-form > div > input{
+		min-width: 300px;
+	}
+	h4{
+		font-size: 50px;
+	}
+	.cool-inp-name{
+		
+	}
+	.cool-inp-name > div > input, .cool-inp-name > div > select, input{
+		font-size: 50px;
+		margin: 0;
+		margin-left: 20px;
+	}
+	#confirm-but{
+		font-size: 70px;
+	}
+	#culc-people{
+		margin: 0 auto;
+		min-height: 60px;
+	}
+	#id_visa_duration{
+		font-size: 40px;
+	}
+	.culc-choices > span{
+		font-size: 50px;
+	}
+	#culc-people > div{
+		font-size: 30px;
+	}
+	textarea{
+		min-width: 700px;
+	}
+	#note{
+		font-size: 30px;
+
+		top: 15%;
+		left: 20%;
+	
+	}
+	#note > h2{
+		font-size: 60px;
+		text-align: left;
+	}
+
 }
