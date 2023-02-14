@@ -99,6 +99,7 @@ class DubaiVisaRequest(models.Model):
 	visa_duration = models.CharField(max_length=120, choices=VISA_DURATION_CHOICES, default='One month')
 
 	passport_series = models.PositiveBigIntegerField()
+	passport_open_date = models.DateField()
 	passport_closure_date = models.DateField()
 
 	created = models.DateTimeField(auto_now_add=True)

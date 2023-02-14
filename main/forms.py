@@ -59,7 +59,8 @@ class DubaiVisaRequestForm(forms.ModelForm):
 				'visa_duration',
 				'passport_series',
 				'passport_closure_date',
-				'contact_information'
+				'contact_information',
+				'passport_open_date'
 		)
 
 		widgets = {
@@ -70,6 +71,9 @@ class DubaiVisaRequestForm(forms.ModelForm):
 			'passport_series': forms.TextInput(attrs={'placeholder': 'Passport series'}),
 			'contact_information': forms.Textarea(attrs={'placeholder': 'Leave your contact information'}),
 			'passport_closure_date': forms.TextInput(attrs={'placeholder': 'passport closure day', 'type':'date'}),
+			'passport_open_date': forms.TextInput(attrs={'placeholder': 'passport getting day', 'type':'date'}),
+
+			
 		}
 
 
@@ -84,3 +88,6 @@ class DubaiVisaRequestForm(forms.ModelForm):
 		self.fields['passport_series'].label = ''
 		self.fields['passport_closure_date'].label = ''
 		self.fields['contact_information'].label = ''
+		self.fields['passport_open_date'].label = ''
+
+		

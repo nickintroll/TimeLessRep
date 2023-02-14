@@ -2,7 +2,13 @@
 {% load static %}
 
 {% block content %}
+
 	<style>
+		img{
+			border-radius: 5px;
+			box-shadow: 0px 0px 8px rgba(128, 128, 128, 0.479);
+			margin: 10px
+		}
 		h1.no-margin{
 			margin-bottom: 0px;
 		}
@@ -121,6 +127,29 @@ min-height: 50vh;
 	</div>
 </div>
 	<div class="content">
+		<div class="centered ">
+			<div style="text-align: center;">
+				<h2>
+					Change your visa
+				</h2>
+				<div style="max-width: 65ch;">
+					Citizens of CIS countries, excluding Russia, Kazakhstan, and Ukraine, must obtain a visa for travel to the 
+					United Arab Emirates. Foreigns cannot apply for visa independently. We provide for our cliens fast and 
+					simple visa processing that might take about an hour.
+				</div>
+			</div>
+			<br>
+			<div class="inline-bastards" style="text-align: center;">
+				<div>
+					<img src="{% static 'imgs/van.png' %}" alt="" style="max-width: 30ch; max-height: 20ch;">
+				</div>
+				<div>
+					<img src="{% static 'imgs/visa_approved.jpg' %}" alt="" style="max-width: 30ch; max-height: 20ch">
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
 		<div class="inline-bastards cool-inp-name centered small-form">
 			<div>
 				<div style="text-align: center;">
@@ -139,18 +168,25 @@ min-height: 50vh;
 				{{ form.now_located_in }}
 			</div>
 		</div>
-		<div class="centered inline-bastards small-form">
-			<div class="pull-to-left" >
+		<div class="centered">
+			<div style="text-align: center;">
 				<h4>
 					Passport series
 				</h4>
 				{{ form.passport_series }}
 			</div>
+
+		</div>
+		<div class="centered inline-bastards ">
+			<div style="text-align: center;">
+				<h4>Getting passport date</h4>
+				{{ form.passport_open_date }}
+			</div>
 			<div style="text-align: center;">
 				<h4>
 					Expiration date
 				</h4>
-				{{ form.passport_closure_date }}
+				{{ form.passport_open_date }}
 			</div>	
 		</div>
 		<div class="centered">
