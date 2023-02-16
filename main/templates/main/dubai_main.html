@@ -51,14 +51,11 @@ text-shadow: 0px 0px 5px black;
 ">
 <div class="centered" style="margin-top: 5%">
 	<h1 style="color: white; text-shadow: 0 0 20px rgb(0, 0, 0, 0.4); max-width: 30ch;">
-		Dubai visa
+		{{ texts.texts.dubai_visas.text }}
 	</h1>	
 </div>
 <div class="centered pho-sma" style="text-align: center; color: rgb(211, 211, 211)">
-	Figure out price to get visa for your family with calculator below. <br>
-	Leave your data so we can make visa for you at the bottom of page. <br> 
-	We also can extend your visa duration, information i bellow the calculator
-
+	{{ texts.texts.dubaivisa_exp.text|linebreaks }}
 </div>
 <div class="tricky-but centered" style="margin-top: 30px; text-shadow: none;">
 	<div>
@@ -74,10 +71,10 @@ text-shadow: 0px 0px 5px black;
 	<form method="post">
 		<div class="content" style="padding-top: 40px; padding-bottom: 50px; text-align: center;">
 			<div>
-				<a href="{% url 'main:my_requests' %}">I have created a request</a>
+				<a href="{% url 'main:my_requests' %}">{{  texts.texts.already_have_request.text }}</a>
 			</div>
 			<h1 style="margin-top: 0px; margin-bottom: 10px;">
-				Calculate price for your family
+				{{  texts.texts.calculate_price_for_fam_dubai.text }}
 			</h1>
 			<div>
 				{{ form.visa_duration }}
@@ -94,7 +91,7 @@ text-shadow: 0px 0px 5px black;
 						</div>	
 					</div>
 					<div>
-						<h2 style="font-size: 25px;" >Total: <span id="culc_results"> 0</span> aed</h2>
+						<h2 style="font-size: 25px;" >{{ texts.texts.total.text }}: <span id="culc_results"> 0</span> aed</h2>
 					</div>		
 
 				</div>
@@ -110,11 +107,10 @@ min-height: 50vh;
 ">
 <div class="centered" style="text-align: center; margin-top: 10%;">
 	<h1 class="centered" style="color: white; text-shadow: 0 0 20px rgb(0, 0, 0, 0.4); max-width: 30ch;margin-top: 60px; margin-bottom: 30px;">
-		Your request
+		{{ texts.texts.your_request.text }}
 	</h2>
 	<div class="pho-sma">
-		To leave your request, fill out the form below. We will contact you as soon as possible.
-		Leave separeted request for each member of your family
+		{{ texts.texts.dubai_your_request_exp.text|linebreaks }}
 	</div>
 </div>
 </div>
@@ -130,12 +126,10 @@ min-height: 50vh;
 		<div class="centered ">
 			<div style="text-align: center;">
 				<h2>
-					Change your visa
+					{{ texts.texts.dubai_change_visa.text }}
 				</h2>
 				<div style="max-width: 65ch;">
-					Citizens of CIS countries, excluding Russia, Kazakhstan, and Ukraine, must obtain a visa for travel to the 
-					United Arab Emirates. Foreigns cannot apply for visa independently. We provide for our cliens fast and 
-					simple visa processing that might take about an hour.
+					{{ texts.texts.dubai_change_visa_exp.text }}
 				</div>
 			</div>
 			<br>
@@ -154,7 +148,7 @@ min-height: 50vh;
 			<div>
 				<div style="text-align: center;">
 					<h4>
-						My passport from
+						{{ texts.texts.my_passport_from.text }}
 					</h4>
 				</div>
 				{{ form.passport_registered_at  }}
@@ -162,7 +156,7 @@ min-height: 50vh;
 			<div>
 				<div style="text-align: center;">
 					<h4>
-						I'm now located in
+						{{ texts.texts.im_located_in.text }}
 					</h4>
 				</div>
 				{{ form.now_located_in }}
@@ -171,7 +165,8 @@ min-height: 50vh;
 		<div class="centered">
 			<div style="text-align: center;">
 				<h4>
-					Passport series
+					{{ texts.texts.passport_series.text }}
+					
 				</h4>
 				{{ form.passport_series }}
 			</div>
@@ -179,25 +174,27 @@ min-height: 50vh;
 		</div>
 		<div class="centered inline-bastards ">
 			<div style="text-align: center;">
-				<h4>Getting passport date</h4>
+				<h4>
+					{{ texts.texts.getting_passport_date.text }}
+				</h4>
 				{{ form.passport_open_date }}
 			</div>
 			<div style="text-align: center;">
 				<h4>
-					Expiration date
+					{{ texts.texts.passport_expiration_date.text }}
 				</h4>
 				{{ form.passport_open_date }}
 			</div>	
 		</div>
 		<div class="centered">
 			<h4>
-				Contact information
+				{{ texts.texts.contact_information.text }}
 			</h4>
 			{{ form.contact_information }}
 		</div>
 		{% csrf_token %}
 		<div class="centered">
-			<input type="submit" value="Confirm" id="confirm-but">	
+			<input type="submit" value="{{ texts.texts.Confirm.text }}" id="confirm-but">	
 		</div>
 	</div>
 	</form>	

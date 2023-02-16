@@ -29,7 +29,7 @@ DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.105', 'localhost', '127.0.0.1', ]
+ALLOWED_HOSTS = ['192.168.0.105', 'localhost', '127.0.0.1', '178.21.8.61']
 CSRF_TRUSTED_ORIGINS = ['https://*.proglobalwork.com','https://*.127.0.0.1', 'https://*.192.168.0.105']
 
 # Application definition
