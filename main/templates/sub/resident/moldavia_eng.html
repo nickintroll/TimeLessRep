@@ -4,29 +4,32 @@
 
 {% block content %}
 <div class="content__title_back" style="
-background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url({% static 'imgs/moldavia.jpg' %}); 	
+background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url({% static 'imgs/moldavia.jpg' %}); 	
 background-position: center; 
 background-repeat: no-repeat;
 background-size: cover;
+padding: 30vh;
+margin-bottom: 30px
 ">
 <!-- background-size: cover; -->
-	<div class="centered lil-text" style="text-align: center; ">
-		<h1 style="color: white; text-shadow: 0 0 20px rgb(0, 0, 0, 0.4);">
-			{{ texts.texts.Moldavia_start_big_title_h1.text }}
-		</h1>
-		<div style="max-width: 65ch;" class="centered">
-			{{ texts.texts.Moldavia_resident_under_big_title_div.text }}
+</div>
+
+<div class="centered lil-text" style="text-align: center; ">
+	<h1 style="text-shadow: 0 0 20px rgb(0, 0, 0, 0.4);">
+		{{ texts.texts.Moldavia_start_big_title_h1.text }}
+	</h1>
+	<div style="max-width: 65ch;" class="centered">
+		{{ texts.texts.Moldavia_resident_under_big_title_div.text }}
+	</div>
+	<br>
+	<br>
+	<div class="tricky-but">
+		<div>
+			Learn more
 		</div>
-		<br>
-		<br>
-		<div class="tricky-but">
-			<div>
-				Learn more
-			</div>
-			 or 
-			<div>
-				contact us
-			</div>
+		 or 
+		<div>
+			contact us
 		</div>
 	</div>
 </div>

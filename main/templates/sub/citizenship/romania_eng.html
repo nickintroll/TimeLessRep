@@ -4,32 +4,36 @@
 {% block content %}
 
 <div class="content__title_back" style="
-background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url({% static 'imgs/romania.jpg' %}); 	
+background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url({% static 'imgs/romania.jpg' %}); 	
 background-position: center; 
 background-repeat: no-repeat;
 background-size: cover;
+padding: 30vh;
 ">
 <!-- background-size: cover; -->
-	<div class="centered" style="text-align: center;">
-		<h1 class="centered" style="color: white; text-shadow: 0 0 20px rgb(0, 0, 0, 0.4); max-width:25ch; text-align: center;">
-			{{ texts.texts.Romania_first_titile_h1.text }}
-		</h1>
-		<div class="lil-text" >
-			{{ texts.texts.Romania_under_first_titile_div.text }}
+</div>
+<br>
+<br>
+<div class="centered" style="text-align: center;">
+	<h1 class="centered" style="text-shadow: 0 0 20px rgb(0, 0, 0, 0.4); max-width:25ch; text-align: center;">
+		{{ texts.texts.Romania_first_titile_h1.text }}
+	</h1>
+	<div class="lil-text" >
+		{{ texts.texts.Romania_under_first_titile_div.text }}
+	</div>
+	<br>
+	<br>
+	<div class="tricky-but lil-text">
+		<div>
+			Learn more
 		</div>
-		<br>
-		<br>
-		<div class="tricky-but lil-text">
-			<div>
-				Learn more
-			</div>
-			 or 
-			<div>
-				Contact us
-			</div>
+		 or 
+		<div>
+			Contact us
 		</div>
 	</div>
 </div>
+
 <div class="content">
 	<div class="centered">
 		<br>
