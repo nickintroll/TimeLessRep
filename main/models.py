@@ -96,7 +96,7 @@ class DubaiVisaRequest(models.Model):
 	first_name = models.CharField(max_length=60)
 	last_name = models.CharField(max_length=60)
 
-	visa_duration = models.CharField(max_length=120, choices=VISA_DURATION_CHOICES, default='One month')
+	visa_duration = models.CharField(max_length=120, choices=VISA_DURATION_CHOICES, default='Trourist visa(30 days)')
 
 	passport_series = models.PositiveBigIntegerField()
 	passport_open_date = models.DateField()
