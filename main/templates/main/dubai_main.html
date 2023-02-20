@@ -21,7 +21,7 @@
 		input[type='submit']{
 			padding-left: 30px;
 			padding-right: 30px;
-			font-size: 20px;
+			font-size: 20px;trans
 			font-weight: 1000;
 			margin: 0 auto !important;
 			border-radius: 3px;
@@ -87,7 +87,7 @@ filter: saturate(1.3);
 					</div>
 					<div class="inline-bastards">
 						<div class="culc-choices">
-							+ <span id="one_person">Person</span>
+							+ <span id="one_person">Grown person</span>
 							<span id="kid_person">Kid under 18yo</span>
 						</div>	
 					</div>
@@ -184,7 +184,7 @@ min-height: 50vh;
 				<h4>
 					{{ texts.texts.passport_expiration_date.text }}
 				</h4>
-				{{ form.passport_open_date }}
+				{{ form.passport_closure_date }}
 			</div>	
 		</div>
 		<div class="centered">
@@ -216,31 +216,46 @@ min-height: 50vh;
 		let visa = visa_type.value;
 
 		for (let child of field.children) {
-			if (child.innerHTML.includes('Person')) {
+			if (child.id === 'one_person') {
 				if (visa === 'Trourist visa(30 days)') {
-					result += 550;
+					result += 600;
 				} else if (visa === 'Trourist visa(60 days)') {
-					result += 750;
+					result += 900;
 				} else if (visa === 'Multivisa(30 days)') {
-					result += 800;
+					result += 900;
 				} else if (visa === 'Multivisa(60 days)') {
-					result += 1250;	
+					result += 1300;	
 				}	
 			};
-			if (child.innerHTML.includes('Kid')) {
+			if (child.id === 'kid_person') {
 				if (visa === 'Trourist visa(30 days)') {
-					result += 300;
+					if (field.innerHTML.includes('one_person') == false) {
+						result += 450;
+					} else {
+						result += 600;
+					}
 				} else if (visa === 'Trourist visa(60 days)') {
-					result += 400;
+					if (field.innerHTML.includes('one_person') == false) {
+						result += 600;
+					} else {
+						result += 900;
+					}
 				} else if (visa === 'Multivisa(30 days)') {
-					result += 600;
+					if (field.innerHTML.includes('one_person') == false) {
+						result += 700;
+					} else {
+						result += 900;
+					}
 				} else if (visa === 'Multivisa(60 days)') {
-					result += 750;	
+					if (field.innerHTML.includes('one_person') == false) {
+						result += 900;
+					} else {
+						result += 1300;
+					}
 				}	
 			};
 			
 		};
-		console.log(visa_type.value)
 		result_place.innerHTML = result;
 	};
 
@@ -256,7 +271,7 @@ min-height: 50vh;
 	};
 
 	var add_item_to_culc = function(e) {		
-		let item = '<div class="removeable" id="'+e.target.innerHTML+'" onclick="remove_item_from_culc(this.id)">' + e.target.innerHTML+ '</div>';
+		let item = '<div class="removeable" id="'+e.target.id+'" onclick="remove_item_from_culc(this.id)">' + e.target.innerHTML+ '</div>';
 		if (field.innerHTML.trim() === 'Nobody'){
 			field.innerHTML = item;
 		} else{

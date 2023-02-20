@@ -1,8 +1,13 @@
 from django.shortcuts import render, redirect
-from .models import TextBlock, DubaiVisaRequest
-from .forms import RequestForm, DubaiVisaRequestForm, RequestSearchForm
+from django.urls import reverse
+
 from aiogram import Bot
 from asyncio import run as asyncrun
+from time import sleep
+
+from .models import TextBlock, DubaiVisaRequest
+from .forms import RequestForm, DubaiVisaRequestForm, RequestSearchForm
+
 
 def get_texts(lang):
 	texts = {}
@@ -72,30 +77,40 @@ def find_request(request):
 
 async def bot_notify(bot, chat, message):
 	await bot.send_message(chat, message)
-	return True
 
 
 def dubai_main_page(request):
 	note = None
 	form = DubaiVisaRequestForm()
+	if request.method == 'GET':
+		note = None
 
 	if request.method == 'POST':
 		form = DubaiVisaRequestForm(request.POST)
 	
 		if form.is_valid():
+
 			form.save()
 			note = 'Your request is saved, here you can check it\'s status, '
-
 			bot = Bot('6184370515:AAFifYARgWR6PzickGu-FLR5vQjSEdopz0w')
 
-			admins = [1941865554, 1751516505]
+			admins = [1751516505, 1941865554]
 			for ad in admins:
 				try:
-					asyncrun(bot_notify(bot, ad, 'New dubai request! \nCheck https://proglobalwork.com/controller_admin_page/ \n\n login:admin\npassword:ne12wpa41ss5352wor234dJustForUsToUSe'))
-
+					asyncrun(
+						bot_notify(
+							bot, 
+							ad, 
+							'New dubai request! \nCheck https://proglobalwork.com/controller_admin_page/ \n\n login: admin\npassword: ne12wpa41ss5352wor234dJustForUsToUSe'
+							)
+						)
+					sleep(0.5)
+					print('sent notify')
 				except:
-					pass
-			# NOTIFICATION TO TELEGRAM
+					print('did not send notification to ', ad)
+
+		else:
+			print(form.errors)
 	return _render(request, 'main/dubai_main.html', context={'form': form, 'note':note})
 
 
