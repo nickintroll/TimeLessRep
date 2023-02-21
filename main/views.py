@@ -94,7 +94,7 @@ def dubai_main_page(request):
 			note = 'Your request is saved, here you can check it\'s status, '
 			bot = Bot('6184370515:AAFifYARgWR6PzickGu-FLR5vQjSEdopz0w')
 
-			admins = [1751516505, 1941865554]
+			admins = [5657568758, 1941865554]
 			for ad in admins:
 				try:
 					asyncrun(
