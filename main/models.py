@@ -1,6 +1,6 @@
 from django.db import models
 
-from deep_translator import GoogleTranslator
+# from deep_translator import GoogleTranslator
 
 langs = [
 	'en', 'ru', 'ar', 'fa'

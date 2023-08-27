@@ -1,34 +1,37 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 
 {% block content %}
-	<h1 class="centered">
-		My request
-	</h1>
-	<div class="centered" style="text-align: center; max-width: 60ch;">
-		Paste here your pasport series and press "find" it will show your request and it's status.
-	</div>
-	<div class="centered">
-		<form method="GET">
-			<div class="inline-bastards">
-				<div>
-					{{ form.request }}
-					{% csrf_token %}
+	<div class="content-width" style="margin-top: 5rem;">
+		<div class="centered">
+			<h1>
+				My request
+			</h1>
+			<div style="max-width: 50ch;">
+				Paste here your pasport series and press "find" it will show your request and it's status.
+			</div>	
+			<br>
+			<form method="GET">
+				<div class="inline-bastards">
+					<div>
+						{{ form.request }}
+						{% csrf_token %}
+					</div>
+					<input type="submit" class="button" value="Find">
 				</div>
-				<div>
-					<input type="submit" value="Find">
-				</div>
-			</div>
-		</form>
+			</form>
+		</div>
+	
 	</div>
 	<div class="centered">
 		{% if message %}
 			{{ message }}
 		{% endif %}
 	</div>
+	<br>
+	<br>
+
 	{% if result %}
-	<br>
-	<br>
-		<div class="content" style="text-align: center">
+		<div class="content-width" style="text-align: center">
 			<h2>
 				Request from:
 			</h2>
@@ -38,6 +41,10 @@
 				{{ result.state }}
 			</h2>
 		</div>
+	{% else %}
+		<h3 class="centered">
+			No results for this requests
+		</h3>
 	{% endif %}
 
 {% endblock %}

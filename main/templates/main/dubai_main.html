@@ -1,32 +1,7 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 {% load static %}
 
 {% block content %}
-
-	<style>
-		img{
-			border-radius: 5px;
-			box-shadow: 0px 0px 8px rgba(128, 128, 128, 0.479);
-			margin: 10px
-		}
-		h1.no-margin{
-			margin-bottom: 0px;
-		}
-		select{
-			background-color: rgb(231, 231, 231);
-		}
-		input[type='date']{
-			padding: 7px 20px 7px 20px;
-		}
-		input[type='submit']{
-			padding-left: 30px;
-			padding-right: 30px;
-			font-size: 20px;trans
-			font-weight: 1000;
-			margin: 0 auto !important;
-			border-radius: 3px;
-		}
-	</style>
 	{% if note %}
 		<div id="note">
 			<div id="note-closer">
@@ -48,165 +23,204 @@ background-size: cover;
 min-height: 50vh;
 position: relative;
 text-shadow: 0px 0px 5px black;
-filter: saturate(1.3);
+filter: saturate(1.5);
+margin-bottom: 2rem
 ">
 </div>
-<div class="centered" style="margin-top: 5%">
-	<h1 style="max-width: 30ch;">
-		{{ texts.texts.dubai_visas.text }}
-	</h1>	
-</div>
-<div class="centered pho-sma" style="text-align: center;">
-	{{ texts.texts.dubaivisa_exp.text|linebreaks }}
-</div>
-<div class="tricky-but centered" style="margin-top: 30px; text-shadow: none;">
-	<div>
-		{{ texts.texts.learn_more.text }}
-	</div>
-	 {{ texts.texts.or.text }}
-	<div>
-		{{ texts.texts.contact_us.text }}
-		
-	</div>
 
+        <div class="content-width">
+            <div class="two-columns destroy-grid">
+                <div>
+                    <div class="">
+                        <h1>
+							{{ texts.texts.dubai_visas.text }}
+                        </h1>
+                        <br>
+                        <div>
+							{{ texts.texts.dubaivisa_exp.text|linebreaks }}
+
+						</div>
+                        <br>
+                        <div class="inline-bastards tricky-but">
+                            <div class="button info-button">
+                                {{ texts.texts.learn_more.text }}
+                            </div> 
+                            <div class="button agree-button">
+                                {{ texts.texts.contact_us.text }}
+                            </div> 
+                        </div>
+                        <br>
+    <br>
+    <br>
+
+                    </div>    
+                </div>
+                
+                <div>
+                    <h2>
+						{{  texts.texts.calculate_price_for_fam_dubai.text }}
+                    </h2>                    
+                    <br>
+                    <div>
+						<form method="post">
+                        <div class="inline-bastards">
+							{{ form.visa_duration }}
+                        </div>
+						<div class="inline-bastards" style="margin-bottom: .5rem;">
+                            <div class="button">	
+                                <span id="one_person">{{ texts.texts.grown_person.text }}</span>
+                            </div>
+                            <div class="button">
+                                <span id="kid_person">{{ texts.texts.Child_under_18yo.text }}</span>
+                            </div>
+                        </div>
+
+                        <div class="gray-back wide-thing " id="culc-people">
+							{{ texts.texts.noone.text }}
+							
+                        </div>
+						<div class="inline-bastards">
+                             <h5>
+								{{ texts.texts.we_are_a_family.text }}
+							</h5>
+							<input type="checkbox" id="is_family" style="margin-left: .4rem;">
+                        </div>
+                        <h3>
+                            {{ texts.texts.total.text }}: <span id="culc_results"> 0</span> aed
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-	<form method="post">
-		<div class="content" style="padding-top: 40px; padding-bottom: 50px; text-align: center;">
+<br>
+<br>
+
+<div class="content__title_back" style="
+	background: linear-gradient( rgba(0, 0, 0, 0.5) 70%, rgba(0, 0, 0, 0.5) ), url({% static 'imgs/dubai-skyline-at-dusk-jpg_header-144981.avif' %}); 	
+	background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 50vh;
+    position: relative;"
+>
+	<div class="total-centered">
+		<h2 style="color: white;">
+			{{ texts.texts.your_request.text }}
+		</h2>
+		<a href="{% url 'main:my_requests' %}" style="color: rgb(113, 213, 246);">{{  texts.texts.already_have_request.text }}</a>
+		<br>
+		<br>
+		<div style="color: rgb(225, 225, 225);">
+			{{ texts.texts.dubai_your_request_exp.text|linebreaks }}
+		</div>
+	</div>
+</div>
+<br>
+<br>
+<br>
+<div class="content-width">
+	<div class="centered"style="max-width: 70ch;">
+		<h2>
+			{{ texts.texts.dubai_change_visa.text }}
+		</h2>
+		<div>
+			{{ texts.texts.dubai_change_visa_exp.text }}
+		</div>
+	</div>
+	<br>
+	<div class="centered">
+		<div class="inline-bastards">
+			<img src="{% static 'imgs/van.png' %}" alt="" style="height: 200px; width: 350px; margin-right: 1rem;">
+			<img src="{% static 'imgs/visa_approved.jpg' %}" alt="" style="height: 200px; width: 350px;">
+		</div>
+	</div>
+</div>    
+
+<br>
+<br>
+<br>
+
+<div class="content-width">
+	<div class="two-columns destroy-grid highlight-point">
+		<div class="two-columns destroy-grid">
 			<div>
-				<a href="{% url 'main:my_requests' %}">{{  texts.texts.already_have_request.text }}</a>
-			</div>
-			<h1 style="margin-top: 0px; margin-bottom: 10px;">
-				{{  texts.texts.calculate_price_for_fam_dubai.text }}
-			</h1>
-			<div class="inline-bastards">
 				<div>
-					{{ form.visa_duration }}
+					First name
+				</div>
+				{{ form.first_name }}		
+				<div>
+					Last name
+				</div>
+				{{ form.last_name }}
+			</div>
+			<div>
+				<div>
+					<div>
+						{{ texts.texts.contact_information.text }}
+					</div>
+					{{ form.contact_information }}
+				</div>
+			</div>
+			<div>
+				<div>
+					<div>
+						{{ texts.texts.passport_series.text }}
+					</div>
+					{{ form.passport_series }}
 				</div>		
 			</div>
-			<div>
-				<input type="checkbox" id="is_family"> {{ texts.texts.we_are_a_family.text }}
-			</div>
-
-			<div>
-				<div style="margin-top: 5px;">
-					<div id="culc-people" style="overflow: auto">
-						{{ texts.texts.noone.text }}
-					</div>
-					<div class="inline-bastards">
-						<div class="culc-choices">
-							+ <span id="one_person">{{ texts.texts.grown_person.text }}</span>
-							<span id="kid_person">{{ texts.texts.Child_under_18yo.text }}</span>
-						</div>	
-					</div>
+		</div>
+		<div>
+			<div class="two-columns destroy-grid">
+				<div style="padding-right: 1rem;">
 					<div>
-						<h2 style="font-size: 25px;" >{{ texts.texts.total.text }}: <span id="culc_results"> 0</span> aed</h2>
-					</div>		
-
-				</div>
-
-			</div>
-		</div>
-		<div class="content__title_back" style="
-background: linear-gradient( rgba(0, 0, 0, 0.7) 70%, rgba(0, 0, 0, 0.8) ), url({% static 'imgs/dubai-skyline-at-dusk-jpg_header-144981.avif' %}); 	
-background-position: bottom; 
-background-repeat: no-repeat;
-background-size: cover;
-min-height: 50vh;
-">
-<div class="centered" style="text-align: center; margin-top: 10%;">
-	<h1 class="centered" style="color: white; text-shadow: 0 0 20px rgb(0, 0, 0, 0.4); max-width: 30ch;margin-top: 60px; margin-bottom: 30px;">
-		{{ texts.texts.your_request.text }}
-	</h2>
-	<div class="pho-sma">
-		{{ texts.texts.dubai_your_request_exp.text|linebreaks }}
-	</div>
-</div>
-</div>
-<div class="centered inline-bastards cool-inp-name small-form">
-	<div>
-		{{ form.first_name }}		
-	</div>
-	<div>
-		{{ form.last_name }}
-	</div>
-</div>
-	<div class="content">
-		<div class="centered ">
-			<div style="text-align: center;">
-				<h2>
-					{{ texts.texts.dubai_change_visa.text }}
-				</h2>
-				<div style="max-width: 65ch;">
-					{{ texts.texts.dubai_change_visa_exp.text }}
-				</div>
-			</div>
-			<br>
-			<div class="inline-bastards" style="text-align: center;">
-				<div>
-					<img src="{% static 'imgs/van.png' %}" alt="" style="max-width: 30ch; max-height: 20ch;">
-				</div>
-				<div>
-					<img src="{% static 'imgs/visa_approved.jpg' %}" alt="" style="max-width: 30ch; max-height: 20ch">
-				</div>
-			</div>
-		</div>
-		<br>
-		<br>
-		<div class="inline-bastards cool-inp-name centered small-form">
-			<div>
-				<div style="text-align: center;">
-					<h4>
 						{{ texts.texts.my_passport_from.text }}
-					</h4>
+					</div>
+					{{ form.passport_registered_at  }}
 				</div>
-				{{ form.passport_registered_at  }}
-			</div>
-			<div>
-				<div style="text-align: center;">
-					<h4>
+				<div>
+					<div>
 						{{ texts.texts.im_located_in.text }}
-					</h4>
+					</div>
+					{{ form.now_located_in }}
 				</div>
-				{{ form.now_located_in }}
+
+				<!--  -->
+				<div>
+					<div>
+						{{ texts.texts.getting_passport_date.text }}
+					</div>
+					{{ form.passport_open_date }}
+				</div>
+				<div>
+					<div>
+						{{ texts.texts.passport_expiration_date.text }}
+					</div>
+					{{ form.passport_closure_date }}
+				</div>	
 			</div>
 		</div>
-		<div class="centered">
-			<div style="text-align: center;">
-				<h4>
-					{{ texts.texts.passport_series.text }}
-					
-				</h4>
-				{{ form.passport_series }}
-			</div>
+		<div>
 
 		</div>
-		<div class="centered inline-bastards ">
-			<div style="text-align: center;">
-				<h4>
-					{{ texts.texts.getting_passport_date.text }}
-				</h4>
-				{{ form.passport_open_date }}
+		<div class="two-columns">			
+			<div>
+
 			</div>
-			<div style="text-align: center;">
-				<h4>
-					{{ texts.texts.passport_expiration_date.text }}
-				</h4>
-				{{ form.passport_closure_date }}
-			</div>	
-		</div>
-		<div class="centered">
-			<h4>
-				{{ texts.texts.contact_information.text }}
-			</h4>
-			{{ form.contact_information }}
-		</div>
-		{% csrf_token %}
-		<div class="centered">
-			<input type="submit" value="{{ texts.texts.Confirm.text }}" id="confirm-but">	
+			<div>
+				<input type="submit" value="{{ texts.texts.Confirm.text }}" id="confirm-but" class="save-bitton button">	
+			</div>
 		</div>
 	</div>
-	</form>	
+	
+
 </div>
+{% csrf_token %}
+</form>	
+
+
 {% endblock %}
 
 {% block scripts %}
@@ -266,10 +280,11 @@ min-height: 50vh;
 		result_place.innerHTML = result;
 	};
 
-	var remove_item_from_culc = function(par_id){
-		let del_target = document.getElementById(par_id);
-
-		field.removeChild(del_target);
+	var remove_item_from_culc = function(event, par_id){
+		// let del_target = document.getElementById('culc-people').getElementById(par_id);
+		// console.log(del_target)
+		field.removeChild(event.target);
+	
 		calculte();
 
 		if (field.innerHTML.length === 0) {
@@ -278,7 +293,7 @@ min-height: 50vh;
 	};
 
 	var add_item_to_culc = function(e) {		
-		let item = '<div class="removeable" id="'+e.target.id+'" onclick="remove_item_from_culc(this.id)">' + e.target.innerHTML+ '</div>';
+		let item = '<div class="removeable" id="'+e.target.id+'" onclick="remove_item_from_culc(event, this.id)">' + e.target.innerHTML+ '</div>';
 		if (field.innerHTML.trim() === '{{ texts.texts.noone.text }}'){
 			field.innerHTML = item;
 		} else{

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 {% load static %}
 
 {% block content %}
@@ -14,71 +14,66 @@ padding: 30vh;
 </div>
 <br>
 <br>
-<div class="centered" style="text-align: center;">
-	<h1 class="centered" style="text-shadow: 0 0 20px rgb(0, 0, 0, 0.4); max-width:25ch; text-align: center;">
-		{{ texts.texts.Romania_first_titile_h1.text }}
-	</h1>
-	<div class="lil-text" >
-		{{ texts.texts.Romania_under_first_titile_div.text }}
-	</div>
-	<br>
-	<br>
-	<div class="tricky-but lil-text">
-		<div>
-			Learn more
-		</div>
-		 or 
-		<div>
-			Contact us
-		</div>
-	</div>
-</div>
+<br>
+<br>
 
-<div class="content">
+
+<div class="content-width">
 	<div class="centered">
+		<h1>
+			{{ texts.texts.Romania_first_titile_h1.text }}
+		</h1>
+		<div class="lil-text" >
+			{{ texts.texts.Romania_under_first_titile_div.text }}
+		</div>
+
 		<br>
-		<br>
-		<div style="display: inline-block; vertical-align: top;">
+		<div class="inline-bastards tricky-but">
+			<div class="button info-button">
+				Learn more
+			</div>
+			<div class="button agree-button">
+				Contact us
+			</div>
+		</div>
+	</div>
+
+
+	<div class="two-columns destroy-grid" style="margin-top: 4rem;">
+		<div style="padding: 1rem;" class="lil-text">
 			<h2>{{ texts.texts.Romania_why_romania_title.text }}</h2>
 			<div class="lil-text">
 				{{ texts.texts.Romania_why_romania_text_div.text|linebreaks }}
 			</div>
 		</div>
-		<div style="display: inline-block; vertical-align: top;">
-			<img src="{% static 'imgs/pasport_owner.jpg' %}" alt="" style="width: 500px;">
-		</div>
-	</div>
-</div>
-<br>
-<br>
-<br>
-<div class="content">
-	<h1 class="centered">
-		{{ texts.texts.Romanian_Citizenship_Program_title_h1.text}}
-	</h1>
-	<div class="centered good_points" style="text-align: center;" >
 		<div>
-			<h2>
+			<img src="{% static 'imgs/pasport_owner.jpg' %}" alt="" class="centered fit-image">
+		</div>	
+	
+	</div>
+
+	<div class="centered highlight-point" style="margin-top: 4rem;">
+		<h2>
+			{{ texts.texts.Romanian_Citizenship_Program_title_h1.text}}
+		</h2>
+		<div>
+			<h3 style="color: gray;">
 				{{ texts.texts.Citizenship_for_investments_title_h2.text }}
-			</h2>
+			</h3>
 			<div class="lil-text">
 				{{ texts.texts.Citizenship_for_investments_div.text }}
 			</div>	
 		</div>
 	</div>
-</div>
-<br>
-<br>
-<br>
-<div class="content">
-	<h1 class="centered">
+
+
+	<h1 class="centered" style="margin-top: 4rem;">
 		{{ texts.texts.Romanian_Benefits_of_a_Romanian_passport.text }}
 	</h1>
-	<br>
-	<div class="grid-master">
+	<div class="four-columns split-columns split-grid tiny-destroy-grid" style="margin-top: 1rem;">
 		<div>
 			<div>
-				<img src="{% static 'imgs/ligall.png' %}" alt="">
+				<img src="{% static 'imgs/ligall.png' %}" alt="" class="fit-image">
 				<h2>
 					{{ texts.texts.Legal_residence_and_work_in_the_EU.text }}
 				</h2>
@@ -90,7 +85,7 @@ padding: 30vh;
 
 		<div>
 			<div>
-				<img src="{% static 'imgs/lifelevel.png' %}" alt="">
+				<img src="{% static 'imgs/lifelevel.png' %}" alt="" class="fit-image">
 				<h2>
 					{{ texts.texts.European_standard_of_living_and_social_guarantees.text }}
 				</h2>
@@ -101,7 +96,7 @@ padding: 30vh;
 		</div>
 		<div>
 			<div>
-				<img src="{% static 'imgs/bussiness.png' %}" alt="">
+				<img src="{% static 'imgs/bussiness.png' %}" alt="" class="fit-image">
 				<h2>
 					{{ texts.texts.Romania_Business_bills_and_loans.text }}
 				</h2>
@@ -113,7 +108,7 @@ padding: 30vh;
 		</div>
 		<div>
 			<div>
-				<img src="{% static 'imgs/visa_access.webp' %}" alt="">
+				<img src="{% static 'imgs/visa_access.webp' %}" alt="" class="fit-image">
 				<h2>
 					{{ texts.texts.Romania_Availability_of_the_E_2_visa_in_the_USA.text }}
 
@@ -124,19 +119,15 @@ padding: 30vh;
 	
 			</div>
 		</div>
-
 	</div>
-</div>
-<br>
-<br>
-<div class="content">
-	<h1 class="centered">
+
+
+	<h1 class="centered" style="margin-top: 4rem; ">
 		{{ texts.texts.Registration_stages.text }}
 	</h1>
-	<b/r>
-	<div class="grid-master reasons-to-apply" >
-		<div class="inline-bastards">
-			<div style="padding: 20px;">
+	<div class="two-columns split-columns tiny-destroy-grid">
+		<div class="inline-bastards highlight-point">
+			<div class="fit-image">
 				<svg class="nice"width="100" height="100" viewBox="-25 -30 300 300" xml:space="preserve">
 
 					<defs>
@@ -147,10 +138,10 @@ padding: 30vh;
 					</svg>
 			</div>
 			<div>
-				<h2 style="max-width: 25ch;">
+				<h3 style="max-width: 25ch;">
 					{{ texts.texts.Step_1_Signing_the_contract.text }}
-				</h2>
-				<div style="max-width: 40ch; font-weight: 100;">
+				</h3>
+				<div style="font-weight: 100; max-width: 20rem;">
 					{{ texts.texts.Step_1_Signing_the_contract_text_div.text }}
 				</div>	
 			</div>
@@ -158,8 +149,8 @@ padding: 30vh;
 
 
 
-		<div class="inline-bastards">
-			<div style="padding: 20px;">
+		<div class="inline-bastards highlight-point">
+			<div class="fit-image">
 				<svg class="nice"width="100" height="100" viewBox="-55 -30 350 350">
 					<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
 						<path d="M 89.235 40.459 c -0.729 -0.976 -1.847 -1.536 -3.065 -1.536 H 74.085 v -8.511 c 0 -2.856 -2.324 -5.181 -5.181 -5.181 h -4.874 V 9.175 c 0 -1.96 -1.594 -3.554 -3.554 -3.554 H 13.819 c -1.96 0 -3.554 1.594 -3.554 3.554 v 6.312 H 5.18 c -2.856 0 -5.181 2.324 -5.181 5.181 v 49.46 v 7.593 v 2.517 c 0 2.284 1.858 4.143 4.142 4.143 h 70.042 c 0.011 0 0.021 0 0.033 0 c 2.389 0 4.245 -1.737 5.093 -4.753 l 10.531 -35.793 C 90.186 42.665 89.965 41.435 89.235 40.459 z M 68.905 28.231 c 1.202 0 2.181 0.978 2.181 2.181 v 8.511 h -7.055 V 28.231 H 68.905 z M 13.819 8.621 h 46.658 c 0.306 0 0.554 0.249 0.554 0.554 v 29.749 H 21.036 c -2.338 0 -4.42 1.57 -5.065 3.817 l -2.706 9.441 V 9.175 C 13.265 8.869 13.514 8.621 13.819 8.621 z M 4.142 81.379 c -0.63 0 -1.142 -0.513 -1.142 -1.143 V 77.72 v -7.593 v -49.46 c 0 -1.203 0.978 -2.181 2.181 -2.181 h 5.085 v 44.161 L 5.341 79.827 C 4.9 81.379 4.388 81.379 4.142 81.379 z M 86.963 42.986 L 76.426 78.797 c -0.331 1.179 -0.983 2.582 -2.222 2.582 c -0.003 0 -0.007 0 -0.011 0 H 7.985 c 0.086 -0.227 0.167 -0.469 0.241 -0.729 l 4.925 -17.184 h 0.114 v -0.397 l 5.59 -19.502 c 0.277 -0.968 1.174 -1.644 2.181 -1.644 h 65.133 c 0.361 0 0.57 0.208 0.663 0.332 S 87.066 42.639 86.963 42.986 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
@@ -168,20 +159,20 @@ padding: 30vh;
 					</g>
 				</svg>			</div>
 			<div>
-				<h2>
+				<h3>
 					{{ texts.texts.Step_2_Collection_of_documents.text }}
-				</h2>
-				<div style="max-width: 40ch; font-weight: 100;">
+				</h3>
+				<div style="max-width:20rem; font-weight: 100; max-width: 20rem;">
 					{{ texts.texts.Step_2_Collection_of_documents_text.text }}
 				</div>	
 			</div>
 		</div>
-		<div class="inline-bastards">
-			<div style="padding: 20px;">
-				<svg class="nice"width="100" height="100" viewBox="-25 -30 300 300">
 
-					<defs>
-					</defs>
+
+	
+		<div class="inline-bastards highlight-point">
+			<div class="fit-image">
+				<svg class="nice"width="100" height="100" viewBox="-25 -30 300 300">
 					<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
 						<path d="M 82.302 75.38 H 7.698 C 3.454 75.38 0 71.927 0 67.682 v -3.233 c 0 -0.553 0.448 -1 1 -1 h 32.003 c 0.552 0 1 0.447 1 1 v 2.857 h 21.994 v -2.857 c 0 -0.553 0.447 -1 1 -1 H 89 c 0.553 0 1 0.447 1 1 v 3.233 C 90 71.927 86.547 75.38 82.302 75.38 z M 2 65.448 v 2.233 c 0 3.142 2.556 5.698 5.698 5.698 h 74.604 c 3.142 0 5.698 -2.557 5.698 -5.698 v -2.233 H 57.997 v 2.857 c 0 0.553 -0.447 1 -1 1 H 33.003 c -0.552 0 -1 -0.447 -1 -1 v -2.857 H 2 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
 						<path d="M 83.914 65.448 c -0.553 0 -1 -0.447 -1 -1 V 17.907 c 0 -0.71 -0.577 -1.288 -1.287 -1.288 H 8.374 c -0.71 0 -1.288 0.578 -1.288 1.288 v 46.541 c 0 0.553 -0.448 1 -1 1 s -1 -0.447 -1 -1 V 17.907 c 0 -1.813 1.475 -3.288 3.288 -3.288 h 73.253 c 1.813 0 3.287 1.475 3.287 3.288 v 46.541 C 84.914 65.001 84.467 65.448 83.914 65.448 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
@@ -192,18 +183,18 @@ padding: 30vh;
 				</svg>			
 			</div>
 			<div class="lil-text the-lil-text">
-				<h2>
+				<h3>
 					{{ texts.texts.Romania_Step_3_Applying_for_citizenship.text }}
-				</h2>
-				<div style="font-weight: 100;">
+				</h3>
+				<div style="font-weight: 100; max-width: 20rem;">
 					{{ texts.texts.Romania_Step_3_Applying_for_citizenship_text.text }}
 				</div>	
 			</div>
 		</div>
-		<div class="inline-bastards">
-			<div style="padding: 20px;">
-				<svg class="nice"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100" height="100" viewBox="-50 -45 350 350" xml:space="preserve">
 
+		<div class="inline-bastards">
+			<div class="fit-image">
+				<svg class="nice"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100" height="100" viewBox="-50 -45 350 350" xml:space="preserve">
 					<defs>
 					</defs>
 					<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
@@ -212,21 +203,20 @@ padding: 30vh;
 					</g>
 				</svg>			
 			</div>
-			<div class="lil-text the-lil-text">
-				<h2>
+			<div class="lil-text" style="max-width: 20rem;">
+				<h3>
 					{{ texts.texts.Step_4_Obtaining_a_Certificate_of_Citizenship.text }}
-				</h2>
-				<div style="max-width: 40ch; font-weight: 100;">
+				</h3>
+				<div style="max-width:20rem; font-weight: 100;">
 					{{ texts.texts.Step_4_Obtaining_a_Certificate_of_Citizenship_text_div.text }}
 				</div>	
 			</div>
 		</div>
-		<div class="inline-bastards">
-			<div style="padding: 20px;">
-				<svg class="nice"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100" height="100" viewBox="-70 -60 400 400" xml:space="preserve">
 
-					<defs>
-					</defs>
+
+		<div class="inline-bastards">
+			<div class="fit-image">
+				<svg class="nice"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100" height="100" viewBox="-70 -60 400 400" xml:space="preserve">
 					<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
 						<path d="M 89 75.557 H 72.892 V 59.987 V 13.443 c 0 -5.268 -4.286 -9.554 -9.555 -9.554 H 9.554 C 4.286 3.889 0 8.175 0 13.443 c 0 0.552 0.448 1 1 1 h 16.109 v 45.544 v 16.569 c 0 5.269 4.286 9.555 9.554 9.555 h 53.782 c 5.269 0 9.555 -4.286 9.555 -9.555 C 90 76.004 89.553 75.557 89 75.557 z M 2.066 12.443 c 0.491 -3.694 3.662 -6.554 7.488 -6.554 s 6.998 2.86 7.489 6.554 H 2.066 z M 19.109 76.557 V 59.987 V 13.443 c 0 -3.074 -1.465 -5.805 -3.727 -7.554 h 47.955 c 4.166 0 7.555 3.389 7.555 7.554 v 46.544 v 15.569 H 35.217 c -0.552 0 -1 0.447 -1 1 c 0 4.166 -3.389 7.555 -7.554 7.555 S 19.109 80.723 19.109 76.557 z M 80.445 84.111 H 32.5 c 2.01 -1.557 3.388 -3.893 3.666 -6.555 h 35.726 h 16.043 C 87.443 81.251 84.272 84.111 80.445 84.111 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
 						<path d="M 61.196 25.546 H 29.547 c -0.552 0 -1 -0.448 -1 -1 s 0.448 -1 1 -1 h 31.649 c 0.553 0 1 0.448 1 1 S 61.749 25.546 61.196 25.546 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
@@ -234,19 +224,19 @@ padding: 30vh;
 						<path d="M 61.196 50.368 H 29.547 c -0.552 0 -1 -0.447 -1 -1 s 0.448 -1 1 -1 h 31.649 c 0.553 0 1 0.447 1 1 S 61.749 50.368 61.196 50.368 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
 						<path d="M 51.671 67.295 c -0.16 0 -0.32 -0.038 -0.467 -0.115 c -0.323 -0.171 -0.527 -0.505 -0.533 -0.87 c -0.018 -1.166 -0.056 -2.331 -0.116 -3.496 c -0.055 0.023 -0.12 0.054 -0.195 0.094 l -7.74 4.095 c -0.489 0.26 -1.093 0.072 -1.352 -0.416 c -0.258 -0.488 -0.072 -1.094 0.416 -1.352 l 7.742 -4.096 c 1.445 -0.763 2.255 -0.267 2.608 0.101 c 0.467 0.48 0.499 1.101 0.517 1.435 c 0.03 0.596 0.056 1.192 0.076 1.789 l 8.018 -5.31 c 0.461 -0.306 1.08 -0.18 1.386 0.282 c 0.305 0.46 0.179 1.08 -0.282 1.386 l -9.525 6.308 C 52.057 67.239 51.864 67.295 51.671 67.295 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
 					</g>
-				</svg>			</div>
-			<div>
-				<h2>
+				</svg>
+			</div>
+			<div style="max-width: 20rem;">
+				<h3>
 					{{ texts.texts.Romania_Step_5_Passing_the_oath.text }}
-				</h2>
-				<div style="max-width: 40ch; font-weight: 100;">
+				</h3>
+				<div style="max-width:20rem; font-weight: 100;">
 					{{ texts.texts.Romania_Step_5_Passing_the_oath_text_div.text }}
 				</div>	
 			</div>
 		</div>
-
 		<div class="inline-bastards">
-			<div style="padding: 20px;">
+			<div class="fit-image">
 				<svg class="nice"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100" height="100" viewBox="-35 -35 320 320" xml:space="preserve">
 					<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
 						<path d="M 73.689 17.943 c -0.018 0 -0.035 0 -0.052 -0.001 c -0.381 -0.02 -0.717 -0.254 -0.867 -0.604 l -2.069 -4.811 l -5.136 -1.023 c -0.373 -0.075 -0.672 -0.354 -0.771 -0.722 s 0.021 -0.759 0.307 -1.01 l 3.937 -3.454 l -0.614 -5.201 c -0.045 -0.378 0.129 -0.749 0.448 -0.956 c 0.321 -0.208 0.73 -0.215 1.056 -0.021 l 4.502 2.676 l 4.756 -2.191 c 0.343 -0.159 0.753 -0.109 1.047 0.131 c 0.296 0.24 0.431 0.626 0.347 0.998 l -1.154 5.108 l 3.554 3.847 c 0.259 0.28 0.336 0.682 0.199 1.037 s -0.463 0.603 -0.842 0.637 l -5.215 0.481 l -2.56 4.568 C 74.385 17.749 74.05 17.943 73.689 17.943 z M 67.943 9.938 l 3.664 0.73 c 0.323 0.064 0.593 0.284 0.724 0.586 l 1.477 3.433 l 1.826 -3.259 c 0.16 -0.287 0.452 -0.477 0.78 -0.507 l 3.721 -0.343 L 77.6 7.833 c -0.224 -0.242 -0.313 -0.578 -0.241 -0.899 l 0.823 -3.645 l -3.394 1.563 c -0.299 0.138 -0.647 0.12 -0.929 -0.049 l -3.212 -1.909 l 0.438 3.71 C 71.124 6.932 71 7.257 70.752 7.474 L 67.943 9.938 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
@@ -260,38 +250,50 @@ padding: 30vh;
 					</svg>
 			</div>
 			<div>
-				<h2>
+				<h3>
 					{{ texts.texts.Romania_Step_6_Getting_a_Romanian_Passport.text }}
-				</h2>
-				<div style="max-width: 40ch; font-weight: 100;">
+				</h3>
+				<div style="max-width:20rem; font-weight: 100;">
 					{{ texts.texts.Romania_Step_6_Getting_a_Romanian_Passport_text_div.text }}
 				</div>
 		</div>
 	</div>
 </div>
-<br>
-<br>
-<br>
-
-<div class="content">
-	<div class="centered" style="height: 300px; 	box-shadow: 0px 0px 20px rgb(94, 94, 94); border-radius: 10px;">
-		<div class="left-haft-form" style="height: 89%; border-right: 1px solid rgb(226, 226, 226); 	position: relative;		">
-			<h1 style="text-align: right;">
-				{{  texts.texts.form__title_on_left_h1.text }}
-			</h1>
-			<div style="font-weight: 100; text-align: right; max-width: 40ch;">
-				{{  texts.texts.form__text_explanation_div.text }}
-			</div>
-			<input type="submit" form="req_form_here" value="{{ texts.texts.Send_but.text }}" id="the-button">
-		</div>
-		<div class="request-form" style="height: 95%;">
-			<form method="POST" id="req_form_here">
-				{{ req_form.as_p }}
-
-				{% csrf_token %}
-			</form>
+<div class="content-width" style="margin-top: 4rem;">
+	<div class="centered highlight-point">
+		<div class="two-columns destroy-grid">
+			<div>
+				<form method="POST" id="req_form_here" style="text-align: center;">
+					<div class="two-columns tiny-destroy-grid">
+						<div>
+							{{ req_form.name }}
+						</div>
+						<div>
+							{{ req_form.email }}
+						</div>
+						<div>
+							{{ req_form.phone }}
+						</div>
+					</div>
+					{{ req_form.additional_message }}
 	
+					{% csrf_token %}
+				</form>
+		
+	
+			</div>
+			<div>
+				<h2>
+					{{  texts.texts.form__title_on_left_h1.text }}
+				</h2>
+				<br>
+				<div style="max-width: 20rem;">
+					{{  texts.texts.form__text_explanation_div.text }}
+				</div>
+				<br>
+				<br>
+				<input type="submit" form="req_form_here" value="{{ texts.texts.Send_but.text }}" id="the-button" class="button agree-button">
+			</div>
 		</div>
-	</div>
 </div>
 {% endblock %}
